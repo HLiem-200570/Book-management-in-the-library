@@ -8,6 +8,7 @@ class BookManager:
         self.json_file = json_file          #Hàm dùng lưu tên Book_data.json vào self.json_file để lần sau ko cần nhập tên sách
         self.books = self.load_books    #Hàm dùng để load sách từ file json
 
+
     #========== XỬ LÝ FILE ===========# 
 
     # Đọc dữ liệu file #
@@ -28,9 +29,14 @@ class BookManager:
     # Lưu data vào file
     def save_data(self):
         try:
-            with open (self.json_file, 'w', encoding = 'utf - 8'):
-                json.dump({'books': self.books}, f, ensure_ascii = False, indent = 2)
+            with open (self.json_file, 'w', encoding = 'utf - 8') as f:
+                json.dump({'books': self.books}, f, ensure_ascii = False, indent = 2) # Dòng này dùng để ghi data vào file json dump(data muốn ghi, nơi ghi, không phải kí tự ascci, thụt lề 2 unit)
             return True
         except Exception as e:
             print(f"An error occurred when save file!")
             return False
+
+
+
+
+
