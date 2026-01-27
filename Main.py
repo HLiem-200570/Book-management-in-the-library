@@ -25,6 +25,7 @@ class BookManager:
                 return []
         else:# trường hợp không tìm thấy file
             print("⚠️ File doesn't exists, create a new file")
+            return []
 
     # Lưu data vào file
     def save_data(self):
