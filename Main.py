@@ -40,5 +40,14 @@ class BookManager:
 
 
 # Book data management
+    def add_Book(self, book_data):
+
+        if self.check_book_exists(book_data['_id']):
+            print(f"Book id {book_data["_id"]} has exists!")
+            return False
+
+        if not self.check_book_exists(book_data):
+            return False
+
 
 
