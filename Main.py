@@ -13,7 +13,7 @@ class BookManager:
 
     # Đọc dữ liệu file #
     def load_books(self):
-        if os.paht.exists(self.json_file): # dòng này kiểm tra xem file có tên có tồn tại ko
+        if os.path.exists(self.json_file): # dòng này kiểm tra xem file có tên có tồn tại ko
             try:
                 with open (self.json_file, 'r', encoding = 'utf - 8') as f:    #dòng này dùng để mở file với self.json: tên sách
                                                                                #                             "r": reading -> chế độ đọc
@@ -39,5 +39,6 @@ class BookManager:
 
 
 
+# Book data management
 
 
