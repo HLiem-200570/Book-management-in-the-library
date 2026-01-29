@@ -50,5 +50,40 @@ class BookManager:
             return False
 
 
+if __name__ == "__main__":
+    print("╔══════════════════════════════════════╗")
+    print("║      📚 LIBRARY MANAGEMENT 📚        ║")
+    print("╠══════════════════════════════════════╣")
+    print("║ 1. Add new book                      ║")
+    print("║ 2. Display book list                 ║")
+    print("║ 3. Search book                       ║")
+    print("║ 4. Edit book information             ║")
+    print("║ 5. Delete book                       ║")
+    print("║--------------------------------------║")
+    print("║ 6. Borrow book                       ║")
+    print("║ 7. Return book                       ║")
+    print("║--------------------------------------║")
+    print("║ 0. Exit                              ║")
+    print("╚══════════════════════════════════════╝")
+    choice = int(input("👉 Choose an option: "))
+    #================ choice ==========
+    if choice == 1:
+        ...
+    elif choice == 2:
+        ...
+    elif choice == 3:
+        ...
+    elif choice == 4:
+        ...
+    elif choice == 5:
+        ...
+    elif choice == 6:
+        ...
+    elif choice == 7:
+        ...
+    elif choice == 0:
+        ...
+    else: print("ERROR")
 
-#note
+
+
