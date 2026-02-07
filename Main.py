@@ -49,6 +49,11 @@ class BookManager:
         if not self.check_book_exists(book_data):
             return False
 
+    def display_book_list(self):
+        if not self.books:
+            print("📫 Books not in library")
+            return
+
 
     def find_book_id(self, id):
         id_list = self.load_books()
@@ -68,7 +73,7 @@ class BookManager:
 
 
     def display_book(self, book):
-        print(f"{'='*60}")
+        print(f"\n{'='*60}")
         print(f"ID: {book['_id']}")
         print(f"Title: {book['title']}")
         print(f"Page count: {book['pageCount']}")
@@ -81,8 +86,7 @@ class BookManager:
 
     def search_book_menu(self):
         while True:
-            print()
-            print(f"{'='*50}")
+            print(f"\n{'='*50}")
             print("🔍 Find book!")
             print("="*50)
             print("1. Find books by ID")
@@ -106,8 +110,7 @@ class BookManager:
                 result = self.find_book_title(key_word)
 
                 if result:
-                    print()
-                    print(f" Finded {len(result)} result")
+                    print(f"\nFinded {len(result)} result")
                     for book in result:
                         self.display_book(book)
                 else:
