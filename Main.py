@@ -53,7 +53,7 @@ class BookManager:
     def find_book_id(self, id):
         id_list = self.load_books()
         for book in id_list:
-            if book['id'] == id:
+            if book['_id'] == id:
                 return book
         return None
 
@@ -93,7 +93,7 @@ class BookManager:
 
             if search == "1":
                 try:
-                    find_id = int(input("Enter book ID: "))
+                    id = int(input("Enter book ID: "))
                     book = self.find_book_id(id)
                     if book:
                         self.display_book(book)
@@ -161,6 +161,7 @@ if __name__ == "__main__":
         elif choice == 7:
             ...
         elif choice == 0:
+            break
             os.system('cls')
             print("Thank you!")
         else: print("ERROR")
