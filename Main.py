@@ -1,4 +1,5 @@
 import json
+from multiprocessing import Value
 import os
 from datetime import datetime
 
@@ -50,50 +51,119 @@ class BookManager:
 
 
     def find_book_id(self, id):
-        book_list = self.load_books()
-        for book in book_list:
+        id_list = self.load_books()
+        for book in id_list:
             if book['id'] == id:
                 return book
         return None
+
+    def find_book_title(self, key_word):
+        book_list = self.load_books()
+        result = []
+        key_word = key_word.lower()
+        for book in book_list:
+            if key_word in book['title'].lower():
+                result.append(book)
+        return result
+
+
+    def display_book(self, book):
+        print(f"/n{'='*60}")
+        print(f"ID: {book['_id']}")
+        print(f"Title: {book['title']}")
+        print(f"Page count: {book['pageCount']}")
+        print(f"Status: {book['status']}")
+        print(f"Authors: {', '.join(book['authors'])}")
+        print(f"Categories: {','.join(book['categories'])}")
+        print(f"Amount: {book['amount']}")
+        print(f"{"="*60}")
+    
+
+    def search_book_menu(self):
+        while True:
+            print(f"/n{'='*50}")
+            print("🔍 Find book!")
+            print("="*50)
+            print("1. Find books by ID")
+            print("2. Find books by title")
+            print("0. Exit")
+            print("-"*50)
+
+            search = input("👉 Enter your choice: ")
+
+            if search == "1":
+                try:
+                    find_id = int(input("Enter book ID: "))
+                    book = self.find_book_id(id)
+                    if book:
+                        self.display_book(book)
+                except ValueError:
+                    print("ID was wrong!")
+
+            elif search == "2":
+                find_title = input("Enter book title: ")
+                result = self.find_book_title(find_title)
+
+                if result:
+                    print(f"/n Finded {len(result)} result")
+                    for book in result:
+                        self.display_book(book)
+                else:
+                    print("Books not found")
+                
+            elif search == "0":
+                break
+            else:
+                print("Something went wrong")
+
+
+
+
+
+
+
 
 if __name__ == "__main__":
     #------------ hàm để clear màn hình cho đẹp------
     os.system('cls')
     #------------------------
-    print("╔══════════════════════════════════════╗")
-    print("║      📚 LIBRARY MANAGEMENT 📚        ║")
-    print("╠══════════════════════════════════════╣")
-    print("║ 1. Add new book                      ║")
-    print("║ 2. Display book list                 ║")
-    print("║ 3. Search book                       ║")
-    print("║ 4. Edit book information             ║")
-    print("║ 5. Delete book                       ║")
-    print("║--------------------------------------║")
-    print("║ 6. Borrow book                       ║")
-    print("║ 7. Return book                       ║")
-    print("║--------------------------------------║")
-    print("║ 0. Exit                              ║")
-    print("╚══════════════════════════════════════╝")
-    choice = int(input("👉 Choose an option: "))
-    #================ choice ==========
-    if choice == 1:
-        ...
-    elif choice == 2:
-        ...
-    elif choice == 3:
-        ...
-    elif choice == 4:
-        ...
-    elif choice == 5:
-        ...
-    elif choice == 6:
-        ...
-    elif choice == 7:
-        ...
-    elif choice == 0:
-        os.system('cls')
-        print("Thank you!")
-    else: print("ERROR")
+    manager = BookManager()
+
+    while True:
+        print("╔══════════════════════════════════════╗")
+        print("║      📚 LIBRARY MANAGEMENT 📚       ║")
+        print("╠══════════════════════════════════════╣")
+        print("║ 1. Add new book                      ║")
+        print("║ 2. Display book list                 ║")
+        print("║ 3. Search book                       ║")
+        print("║ 4. Edit book information             ║")
+        print("║ 5. Delete book                       ║")
+        print("║--------------------------------------║")
+        print("║ 6. Borrow book                       ║")
+        print("║ 7. Return book                       ║")
+        print("║--------------------------------------║")
+        print("║ 0. Exit                              ║")
+        print("╚══════════════════════════════════════╝")
+        choice = int(input("👉 Choose an option: "))
+        #================ choice ==========
+        if choice == 1:
+            ...
+        elif choice == 2:
+            ...
+        elif choice == 3:
+            manager.search_book_menu()
+        elif choice == 4:
+            ...
+        elif choice == 5:
+            ...
+        elif choice == 6:
+            ...
+        elif choice == 7:
+            ...
+        elif choice == 0:
+            os.system('cls')
+            print("Thank you!")
+        else: print("ERROR")
 
 
 
