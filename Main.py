@@ -68,7 +68,7 @@ class BookManager:
 
 
     def display_book(self, book):
-        print(f"/n{'='*60}")
+        print(f"{'='*60}")
         print(f"ID: {book['_id']}")
         print(f"Title: {book['title']}")
         print(f"Page count: {book['pageCount']}")
@@ -81,7 +81,8 @@ class BookManager:
 
     def search_book_menu(self):
         while True:
-            print(f"/n{'='*50}")
+            print()
+            print(f"{'='*50}")
             print("🔍 Find book!")
             print("="*50)
             print("1. Find books by ID")
@@ -105,7 +106,8 @@ class BookManager:
                 result = self.find_book_title(key_word)
 
                 if result:
-                    print(f"/n Finded {len(result)} result")
+                    print()
+                    print(f" Finded {len(result)} result")
                     for book in result:
                         self.display_book(book)
                 else:
@@ -131,7 +133,7 @@ if __name__ == "__main__":
 
     while True:
         print("╔══════════════════════════════════════╗")
-        print("║      📚 LIBRARY MANAGEMENT 📚       ║")
+        print("║      📚 LIBRARY MANAGEMENT 📚        ║")
         print("╠══════════════════════════════════════╣")
         print("║ 1. Add new book                      ║")
         print("║ 2. Display book list                 ║")
