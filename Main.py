@@ -50,7 +50,7 @@ class BookManager:
 
 
     def find_book_id(self, id):
-        book_list = load_books()
+        book_list = self.load_books()
         for book in book_list:
             if book['id'] == id:
                 return book
