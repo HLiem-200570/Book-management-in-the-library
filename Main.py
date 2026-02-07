@@ -101,8 +101,8 @@ class BookManager:
                     print("ID was wrong!")
 
             elif search == "2":
-                find_title = input("Enter book title: ")
-                result = self.find_book_title(find_title)
+                key_word = input("Enter book title: ")
+                result = self.find_book_title(key_word)
 
                 if result:
                     print(f"/n Finded {len(result)} result")
