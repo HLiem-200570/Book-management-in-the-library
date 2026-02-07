@@ -15,11 +15,10 @@ class BookManager:
     def load_books(self):
         if os.path.exists(self.json_file): # dòng này kiểm tra xem file có tên có tồn tại ko
             try:
-                with open (self.json_file, 'r', encoding = 'utf - 8') as f:    #dòng này dùng để mở file với self.json: tên sách
-                                                                               #                             "r": reading -> chế độ đọc
+                with open (self.json_file, 'r', encoding = 'utf - 8') as f:   #dòng này dùng để mở file với self.json: tên sách
+                                                                               # "r": reading -> chế độ đọc
                                                                                # và utf - 8 là mã hóa để đọc được tiếng việt
-                    data = json.load(f)
-                    return data.get("Book_data", [])
+                    return json.load(f)
             except json.JSONDecodeError:  # Nếu file gặp lỗi thì code này sẽ chạy
                 print("⚠️ File was wrong, create a new file!")
                 return []
@@ -49,6 +48,13 @@ class BookManager:
         if not self.check_book_exists(book_data):
             return False
 
+
+    def find_book_id(self, id):
+        book_list = load_books()
+        for book in book_list:
+            if book['id'] == id:
+                return book
+        return None
 
 if __name__ == "__main__":
     #------------ hàm để clear màn hình cho đẹp------
