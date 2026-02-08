@@ -23,8 +23,8 @@
 1. clone repository
 ###bash
 git clone https://github.com/HLiem-200570/Book-management-in-the-library
-cd cd Book-management-in-the-library
-python Main.py
+- cd Book-management-in-the-library
+- python Main.py
 
 # File architecture
 Book-management-in-the-library
