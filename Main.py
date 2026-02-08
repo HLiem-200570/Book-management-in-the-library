@@ -7,7 +7,7 @@ from datetime import datetime
 class BookManager:
     def __init__(self, json_file = "Book_data.json"):
         self.json_file = json_file          #Hàm dùng lưu tên Book_data.json vào self.json_file để lần sau ko cần nhập tên sách
-        self.books = self.load_books    #Hàm dùng để load sách từ file json
+        self.books = self.load_books()    #Hàm dùng để load sách từ file json
 
 
     #========== XỬ LÝ FILE ===========# 
@@ -49,12 +49,9 @@ class BookManager:
         if not self.check_book_exists(book_data):
             return False
 
-    def display_book_list(self):
-        if not self.books:
-            print("📫 Books not in library")
-            return
 
 
+#Tìm sách theo ID
     def find_book_id(self, id):
         id_list = self.load_books()
         for book in id_list:
@@ -62,6 +59,7 @@ class BookManager:
                 return book
         return None
 
+#Tìm sách theo tên
     def find_book_title(self, key_word):
         book_list = self.load_books()
         result = []
@@ -72,6 +70,7 @@ class BookManager:
         return result
 
 
+#Hàm dùng để hiển thị sách
     def display_book(self, book):
         print(f"\n{'='*60}")
         print(f"ID: {book['_id']}")
@@ -84,6 +83,8 @@ class BookManager:
         print(f"{"="*60}")
     
 
+
+#Hiển thị menu tìm kiếm sách
     def search_book_menu(self):
         while True:
             print(f"\n{'='*50}")
@@ -121,7 +122,118 @@ class BookManager:
             else:
                 print("Something went wrong")
 
+    def display_book_list(self):
+        if not self.books:
+            print("📫 Books not in library")
+            return
 
+        books_per_page = 10
+        total_books = len(self.books)
+        total_pages = (total_books + books_per_page - 1) // books_per_page
+        current_page = 1
+
+        while True:
+            # Tính vị trí
+            start = (current_page - 1) * books_per_page
+            end = min(start + books_per_page, total_books)
+                
+                # ===== HIỂN THỊ TIÊU ĐỀ DẠNG MỤC LỤC =====
+            print(f"\n")
+            print("╔" + "═"*78 + "╗")
+            print("║" + " "*30 + "📚 MỤC LỤC SÁCH" + " "*33 + "║")
+            print("║" + " "*26 + f"(Trang {current_page}/{total_pages})" + " "*43 + "║")
+            print("╠" + "═"*78 + "╣")
+                
+                # ===== HIỂN THỊ TỪNG SÁCH DẠNG MỤC LỤC =====
+            for i in range(start, end):
+                book = self.books[i]
+
+                book_id = book['_id']
+                title = book['title']
+                authors = ', '.join(book['authors'])
+                amount = book.get('amount', 0)
+                    
+                    # ===== ĐỊNH DẠNG DẠNG MỤC LỤC =====
+                    # STT. Tên sách ........................... Trang
+                    
+                    # Tính độ dài để thêm dấu chấm
+                    # Công thức: 70 ký tự - độ dài tên - độ dài tác giả
+                    
+                    # Dòng 1: Số thứ tự và tên sách
+                stt = i + 1  # Số thứ tự bắt đầu từ 1
+                    
+                    # Nếu tên sách quá dài, cắt và thêm "..."
+                if len(title) > 55:
+                        title_display = title[:52] + "..."
+                else:
+                    title_display = title
+                    # Tính số dấu chấm cần thêm
+                    dots_count = 70 - len(f"{stt}. {title_display}") - len(str(book_id))
+                    dots = "." * max(dots_count, 3)  # Ít nhất 3 dấu chấm
+                    
+                    # In dòng sách
+                    print(f"║ {stt:>3}. {title_display}{dots}{book_id:>5} ║")
+                    
+                    # Dòng 2: Tác giả (thụt vào)
+                    if len(authors) > 70:
+                        authors_display = authors[:67] + "..."
+                    else:
+                        authors_display = authors
+                    
+                    print(f"║      ✍️  {authors_display:<67} ║")
+                    
+                    # Dòng 3: Số lượng (nếu muốn)
+                    print(f"║      📦 Còn lại: {amount} cuốn{' '*54} ║")
+                    # Đường kẻ ngăn cách giữa các sách
+                    if i < end - 1:  # Không kẻ ở sách cuối
+                        print("║" + " "*78 + "║")
+
+                 # ===== FOOTER MỤC LỤC =====
+            print("╠" + "═"*78 + "╣")
+            print(f"║ Hiển thị {start+1}-{end} trong tổng số {total_books} cuốn sách{' '*(78 - len(f' Hiển thị {start+1}-{end} trong tổng số {total_books} cuốn sách'))} ║")
+            print("╚" + "═"*78 + "╝")
+                
+                # ===== MENU ĐIỀU HƯỚNG =====
+            if current_page < total_pages:
+                print("\n[N] Trang tiếp | [P] Trang trước | [V] Xem chi tiết | [0] Thoát")
+                choice = input("👉 Lựa chọn của bạn: ").upper()
+                
+                if choice == 'N':
+                    current_page += 1
+                elif choice == 'P' and current_page > 1:
+                    current_page -= 1
+                elif choice == 'V':
+                    self.view_book_detail()
+                elif choice == '0':
+                    break
+            else:
+                print("\n[P] Trang trước | [V] Xem chi tiết | [0] Thoát")
+                choice = input("👉 Lựa chọn của bạn: ").upper()
+                    
+                if choice == 'P' and current_page > 1:
+                    current_page -= 1
+                elif choice == 'V':
+                    self.view_book_detail()
+                elif choice == '0':
+                    break
+
+    def view_book_detail(self):
+        """
+        Xem chi tiết sách từ mục lục
+        """
+        try:
+            book_id = int(input("\n👉 Nhập ID sách để xem chi tiết: "))
+            book = self.find_book_id(book_id)
+            
+            if book:
+                self.display_book(book)
+                input("\n⏸️  Nhấn Enter để tiếp tục...")
+            else:
+                print("❌ Không tìm thấy sách!")
+                input("\n⏸️  Nhấn Enter để tiếp tục...")
+        except ValueError:
+            print("❌ ID phải là số!")
+            input("\n⏸️  Nhấn Enter để tiếp tục...")
 
 
 
@@ -154,7 +266,7 @@ if __name__ == "__main__":
         if choice == 1:
             ...
         elif choice == 2:
-            ...
+             manager.display_book_list()
         elif choice == 3:
             manager.search_book_menu()
         elif choice == 4:
