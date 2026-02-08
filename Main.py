@@ -140,8 +140,8 @@ class BookManager:
                 # ===== HIỂN THỊ TIÊU ĐỀ DẠNG MỤC LỤC =====
             print(f"\n")
             print("╔" + "═"*78 + "╗")
-            print("║" + " "*30 + "📚 MỤC LỤC SÁCH" + " "*33 + "║")
-            print("║" + " "*26 + f"(Trang {current_page}/{total_pages})" + " "*43 + "║")
+            print("║" + " "*30 + "📚 TABLE OF CONTENTS" + " "*33 + "║")
+            print("║" + " "*26 + f"(page {current_page}/{total_pages})" + " "*43 + "║")
             print("╠" + "═"*78 + "╣")
                 
                 # ===== HIỂN THỊ TỪNG SÁCH DẠNG MỤC LỤC =====
@@ -183,20 +183,20 @@ class BookManager:
                     print(f"║      ✍️  {authors_display:<67} ║")
                     
                     # Dòng 3: Số lượng (nếu muốn)
-                    print(f"║      📦 Còn lại: {amount} cuốn{' '*54} ║")
+                    print(f"║      📦 Remaining: {amount} books{' '*54} ║")
                     # Đường kẻ ngăn cách giữa các sách
                     if i < end - 1:  # Không kẻ ở sách cuối
                         print("║" + " "*78 + "║")
 
                  # ===== FOOTER MỤC LỤC =====
             print("╠" + "═"*78 + "╣")
-            print(f"║ Hiển thị {start+1}-{end} trong tổng số {total_books} cuốn sách{' '*(78 - len(f' Hiển thị {start+1}-{end} trong tổng số {total_books} cuốn sách'))} ║")
+            print(f"║ Display {start+1}-{end} in total {total_books} books{' '*(78 - len(f' Display {start+1}-{end} in total {total_books} books'))} ║")
             print("╚" + "═"*78 + "╝")
                 
                 # ===== MENU ĐIỀU HƯỚNG =====
             if current_page < total_pages:
-                print("\n[N] Trang tiếp | [P] Trang trước | [V] Xem chi tiết | [0] Thoát")
-                choice = input("👉 Lựa chọn của bạn: ").upper()
+                print("\n[N] Next page | [P] Previous page | [V] View details | [0] Exit")
+                choice = input("👉 Enter your choice: ").upper()
                 
                 if choice == 'N':
                     current_page += 1
@@ -207,8 +207,8 @@ class BookManager:
                 elif choice == '0':
                     break
             else:
-                print("\n[P] Trang trước | [V] Xem chi tiết | [0] Thoát")
-                choice = input("👉 Lựa chọn của bạn: ").upper()
+                print("\n[P] Previous page | [V] View details | [0] Exit")
+                choice = input("👉 Enter your choice: ").upper()
                     
                 if choice == 'P' and current_page > 1:
                     current_page -= 1
@@ -219,21 +219,21 @@ class BookManager:
 
     def view_book_detail(self):
         """
-        Xem chi tiết sách từ mục lục
+        View books detail from table of contents
         """
         try:
-            book_id = int(input("\n👉 Nhập ID sách để xem chi tiết: "))
+            book_id = int(input("\n👉 Enter ID to view details: "))
             book = self.find_book_id(book_id)
             
             if book:
                 self.display_book(book)
-                input("\n⏸️  Nhấn Enter để tiếp tục...")
+                input("\n⏸️  Press Enter to continue...")
             else:
-                print("❌ Không tìm thấy sách!")
-                input("\n⏸️  Nhấn Enter để tiếp tục...")
+                print("❌ Books not found!")
+                input("\n⏸️  Press Enter to continue...")
         except ValueError:
-            print("❌ ID phải là số!")
-            input("\n⏸️  Nhấn Enter để tiếp tục...")
+            print("❌ ID must be number!")
+            input("\n⏸️  Press Enter to countinue...")
 
 
 
