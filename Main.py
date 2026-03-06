@@ -258,6 +258,7 @@ if __name__ == "__main__":
         print("║--------------------------------------║")
         print("║ 6. Borrow book                       ║")
         print("║ 7. Return book                       ║")
+        print("║ 8. Borrowed book list                ║")
         print("║--------------------------------------║")
         print("║ 0. Exit                              ║")
         print("╚══════════════════════════════════════╝")
@@ -276,6 +277,8 @@ if __name__ == "__main__":
         elif choice == 6:
             ...
         elif choice == 7:
+            ...
+        elif choice == 8:
             ...
         elif choice == 0:
             break
