@@ -57,8 +57,22 @@ class BookManager:
         return max(book['_id'] for book in self.books)+1
 
     def add_book(self):
-        ...
+        print(f"\n{"="*50}")
+        print("➡️ADD NEW BOOK⬅️")
+        print("="*50)
+        print("Press 0 at any fields to cancel \n")
 
+        try:
+    #-----title-----#
+            tittle = input("Enter your title: ")
+            if tittle == "0":
+                print("Cancelled‼️")
+                return False
+            if not tittle:
+                print("")
+                return False
+        except:
+            ...
 
 #Tìm sách theo ID
     def find_book_id(self, id):
