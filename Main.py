@@ -270,8 +270,9 @@ if __name__ == "__main__":
     manager = BookManager()
 
     while True:
+        print("\n")
         print("╔══════════════════════════════════════╗")
-        print("║      📚 LIBRARY MANAGEMENT 📚        ║")
+        print("║      📚 LIBRARY MANAGEMENT 📚       ║")
         print("╠══════════════════════════════════════╣")
         print("║ 1. Add new book                      ║")
         print("║ 2. Display book list                 ║")
@@ -288,7 +289,7 @@ if __name__ == "__main__":
         choice = int(input("👉 Choose an option: "))
         #================ choice ==========
         if choice == 1:
-            manager.add_Book()
+            manager.add_book()
         elif choice == 2:
              manager.display_book_list()
         elif choice == 3:
