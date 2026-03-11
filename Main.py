@@ -103,7 +103,7 @@ class BookManager:
         print(f"Authors: {', '.join(book['authors'])}")
         print(f"Categories: {','.join(book['categories'])}")
         print(f"Amount: {book['amount']}")
-        print(f"{"="*60}")
+        print(f"{'='*60}")
     
 
 
