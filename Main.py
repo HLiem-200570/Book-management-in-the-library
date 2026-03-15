@@ -4,14 +4,16 @@ import sys
 from datetime import datetime
 
 #======================ACCOUNT====================
+AccData = "Account_data.json"
+BookData = "Book_data.json"
 def gotoxy(x, y):
     # hàm này để đưa con trỏ tời vị trí x, y trong terminal (làm đẹp thôi)
     sys.stdout.write(f"\033[{y};{x}H")
     sys.stdout.flush()
 
 class User:
-    def __init__(self, userID, username, password):
-        self.userID = userID
+    def __init__(self, ID, username, password):
+        self.ID = ID
         self.username = username
         self.password = password 
     def login(self):
@@ -19,9 +21,9 @@ class User:
     def display_info(self):
         pass
 class Admin(User):
-    def __init__(self, userID, username, password): 
+    def __init__(self, ID, username, password): 
         #==== hàm này tạo constructor cho nhanh thay vì phải code lại self.username = username....
-        super().__init__(userID, username, password)
+        super().__init__(ID, username, password)
     # methods
     def login_admin():
         os.system("cls")
@@ -44,20 +46,20 @@ class Admin(User):
                 username_temp = input().strip() 
                 gotoxy(20, 7)
                 password_temp = input().strip()
-                if Account_system.is_account(ID_temp, username_temp, password_temp):
+                if AccSystem.is_account(ID_temp, username_temp, password_temp):
                     return True
                 else: 
                     print(ID_temp)
                     print(username_temp)
                     print(password_temp)
                     n = input()
-                    Account_system.incorrect_screen(Admin.login_admin)
+                    AccSystem.incorrect_screen(Admin.login_admin)
             elif choice == "r":
                 return False
-            else: Account_system.error_screen(Admin.login_admin)
+            else: AccSystem.error_screen(Admin.login_admin)
 class Member(User):
-    def __init__(self, userID, username, password):
-        super().__init__(userID, username, password)
+    def __init__(self, ID, username, password):
+        super().__init__(ID, username, password)
     @staticmethod
     def login_member():
         os.system('cls')
@@ -80,12 +82,12 @@ class Member(User):
                 username_temp = input().strip() 
                 gotoxy(20, 7)
                 password_temp = input().strip()
-                if Account_system.is_account(ID_temp, username_temp, password_temp):
+                if AccSystem.is_account(ID_temp, username_temp, password_temp):
                     return True
-                else: Account_system.incorrect_screen(Member.login_member)
-            elif choice == "t":
+                else: AccSystem.incorrect_screen(Member.login_member)
+            elif choice == "r":
                 return False
-            else: Account_system.error_screen(Member.login_member)
+            else: AccSystem.error_screen(Member.login_member)
     
     @staticmethod     
     def Signin_member():
@@ -109,20 +111,19 @@ class Member(User):
                 username_temp = input().strip() 
                 gotoxy(20, 7)
                 password_temp = input().strip()
-                if Account_system.is_account(ID_temp, username_temp, password_temp):
-                    Account_system.registered_screen()
+                if AccSystem.is_account(ID_temp, username_temp, password_temp):
+                    AccSystem.registered_screen(Member.Signin_member)
                 else: 
-                    if Account_system.ID_isRegistered(ID_temp):  
-                        isRegistered_screen(Member.Signin_member)
-                    else:
-                       Account_system.create_account(ID_temp, username_temp, password_temp)
-                       Account_system.account_success_screen(Account_system.login_screen)
-            else: Account_system.error_screen(Member.login_member)
-class Account_system:
+                    if AccSystem.ID_isRegistered(ID_temp):  
+                        AccSystem.isRegistered_screen(Member.Signin_member)                    
+                        AccSystem.create_account(ID_temp, username_temp, password_temp)
+                        AccSystem.Success_screen(AccSystem.login_screen)
+            else: AccSystem.error_screen(Member.login_member)
+class AccSystem:
     #boolean        
     def ID_isRegistered(ID):
         lib = Library()
-        account = lib.load_data(Library.ACCDATA)
+        account = lib.load_data(AccData)
         for check in account:
             if check["ID"] == ID:
                 return True
@@ -130,15 +131,15 @@ class Account_system:
     def is_account(ID, username, password):
         #kiểm tra tài khoản đúng hay ko
         lib = Library()
-        account = lib.load_data(Library.ACCDATA)
+        account = lib.load_data(AccData)
         for check in account: # xét từng hàng trong list
-            if len(check) >= 3:
-                if check["ID"] == ID and check["Username"] == username and check["Password"] == password:
-                    return True
+            if check["ID"] == ID and check["Username"] == username and check["Password"] == password:
+                return True
         return False
     #handle
     def create_account(ID, username, password):
         lib = Library()
+        data = lib.load_data(AccData)
         new_account = {
         "ID": ID,
         "Username": username,
@@ -146,7 +147,7 @@ class Account_system:
         }
 
         data.append(new_account)
-        lib.save_data(Library.ACCDATA, new_account)
+        lib.save_data(AccData, data)
     #screen    
     def error_screen(back_func):
         os.system("cls")
@@ -181,7 +182,7 @@ class Account_system:
         elif choice == "0":
             exit("Thank you!")
         else:
-            Account_system.error_screen(back_func)
+            AccSystem.error_screen(back_func)
     def registered_screen(back_func):
         os.system('cls')
         print("╔══════════════════════════════════════╗")
@@ -194,8 +195,8 @@ class Account_system:
         if choice == "r": 
             back_func()
         else: 
-            Account_system.error_screen(back_func)
-    def account_success_screen(back_func):
+            AccSystem.error_screen(back_func)
+    def Success_screen(back_func):
         os.system('cls')
         print("╔══════════════════════════════════════╗")
         print("║             Successful!              ║")
@@ -207,7 +208,7 @@ class Account_system:
         if choice == "r": 
             back_func()
         else: 
-            Account_system.error_screen(back_func)
+            AccSystem.error_screen(back_func)
     def isRegistered_screen(back_func):
         os.system('cls')
         print("╔══════════════════════════════════════╗")
@@ -220,7 +221,7 @@ class Account_system:
         if choice == "r": 
             back_func()
         else: 
-            Account_system.error_screen(back_func)
+            AccSystem.error_screen(back_func)
     @staticmethod
     def login_screen():
         while True:
@@ -250,19 +251,18 @@ class Account_system:
             elif choice == "0":
                 exit("Thank you!")
             else: 
-                Account_system.error_screen(Account_system.login_screen)
+                AccSystem.error_screen(AccSystem.login_screen)
 #=================================================  
 
 # Lớp BookManager dùng để quản lý các hàm liên quan đến quản lí sách
 class BookManager:
     def __init__(self, json_file = "Book_data.json"):
         self.json_file = json_file          #Hàm dùng lưu tên Book_data.json vào self.json_file để lần sau ko cần nhập tên sách
-        self.books = self.load_books    #Hàm dùng để load sách từ file json
+        self.books = self.load_books()    #Hàm dùng để load sách từ file json
 
 
     #========== XỬ LÝ FILE ===========# 
 class Library:
-    ACCDATA = "Account_data.json"
     # Đọc dữ liệu file #
     def load_data(self, filename): 
         if os.path.exists(filename): # dòng này kiểm tra xem file có tên có tồn tại ko
@@ -287,10 +287,8 @@ class Library:
         except Exception as e:
             print(f"An error occurred when save file!")
             return False
-
-
-
-# Book data management
+        
+    # Book data management
     def add_Book(self, book_data):
 
         if self.check_book_exists(book_data['_id']):
@@ -299,10 +297,12 @@ class Library:
 
         if not self.check_book_exists(book_data):
             return False
-
+    def find_book(self, book_id): pass
+    def create_borrow_record(self, member_id, book_id): pass
+    def return_book(self, record_id): pass
 
 if __name__ == "__main__":
-    Account_system.login_screen() # trả về Boolean
+    AccSystem.login_screen() # trả về Boolean
     #------------ hàm để clear màn hình cho đẹp------
     os.system('cls')
     #------------------------
