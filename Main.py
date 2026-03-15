@@ -25,9 +25,10 @@ class Admin(User):
         #==== hàm này tạo constructor cho nhanh thay vì phải code lại self.username = username....
         super().__init__(ID, username, password)
     # methods
+    @staticmethod
     def login_admin():
-        os.system("cls")
         while True:
+            os.system("cls")
             print("╔══════════════════════════════════════╗")
             print("║             Login Admin              ║")
             print("╠══════════════════════════════════════╣")
@@ -41,29 +42,29 @@ class Admin(User):
             choice = input("👉 Choose an option: ").strip()
             if choice == "t":
                 gotoxy(20, 5)
-                ID_temp = input().strip()            
+                ID = input().strip()            
                 gotoxy(20, 6)
-                username_temp = input().strip() 
+                username = input().strip() 
                 gotoxy(20, 7)
-                password_temp = input().strip()
-                if AccSystem.is_account(ID_temp, username_temp, password_temp):
+                password = input().strip()
+                if AccSystem.is_account(ID, username, password):
                     return True
                 else: 
-                    print(ID_temp)
-                    print(username_temp)
-                    print(password_temp)
+                    print(ID)
+                    print(username)
+                    print(password)
                     n = input()
-                    AccSystem.incorrect_screen(Admin.login_admin)
+                    AccSystem.incorrect_screen()
             elif choice == "r":
                 return False
-            else: AccSystem.error_screen(Admin.login_admin)
+            else: AccSystem.error_screen()
 class Member(User):
     def __init__(self, ID, username, password):
         super().__init__(ID, username, password)
     @staticmethod
     def login_member():
-        os.system('cls')
         while True:
+            os.system('cls')
             print("╔══════════════════════════════════════╗")
             print("║             Login Member             ║")
             print("╠══════════════════════════════════════╣")
@@ -77,24 +78,24 @@ class Member(User):
             choice = input("👉 Choose an option: ").strip()
             if choice == "t":
                 gotoxy(20, 5)
-                ID_temp = input().strip()            
+                ID = input().strip()            
                 gotoxy(20, 6)
-                username_temp = input().strip() 
+                username = input().strip() 
                 gotoxy(20, 7)
-                password_temp = input().strip()
-                if AccSystem.is_account(ID_temp, username_temp, password_temp):
+                password = input().strip()
+                if AccSystem.is_account(ID, username, password):
                     return True
-                else: AccSystem.incorrect_screen(Member.login_member)
+                else: AccSystem.incorrect_screen()
             elif choice == "r":
                 return False
-            else: AccSystem.error_screen(Member.login_member)
+            else: AccSystem.error_screen()
     
     @staticmethod     
-    def Signin_member():
-        os.system('cls')
+    def Signup():
         while True:
+            os.system('cls')
             print("╔══════════════════════════════════════╗")
-            print("║            Sign in Member            ║")
+            print("║           Create an account          ║")
             print("╠══════════════════════════════════════╣")
             print("║          't' to Enter your           ║")
             print("║      Student ID:                     ║")
@@ -106,19 +107,22 @@ class Member(User):
             choice = input("👉 Choose an option: ").strip()
             if choice == "t":
                 gotoxy(20, 5)
-                ID_temp = input().strip()            
+                ID = input().strip()            
                 gotoxy(20, 6)
-                username_temp = input().strip() 
+                username = input().strip() 
                 gotoxy(20, 7)
-                password_temp = input().strip()
-                if AccSystem.is_account(ID_temp, username_temp, password_temp):
-                    AccSystem.registered_screen(Member.Signin_member)
+                password = input().strip()
+                if AccSystem.is_account(ID, username, password):
+                    AccSystem.registered_screen()
                 else: 
-                    if AccSystem.ID_isRegistered(ID_temp):  
-                        AccSystem.isRegistered_screen(Member.Signin_member)                    
-                        AccSystem.create_account(ID_temp, username_temp, password_temp)
-                        AccSystem.Success_screen(AccSystem.login_screen)
-            else: AccSystem.error_screen(Member.login_member)
+                    if AccSystem.ID_isRegistered(ID):  
+                        AccSystem.isRegistered_screen()
+                    else:                    
+                        AccSystem.create_account(ID, username, password)
+                        AccSystem.Success_screen()
+            elif choice == "r": 
+                return False
+            else: AccSystem.error_screen()
 class AccSystem:
     #boolean        
     def ID_isRegistered(ID):
@@ -149,79 +153,83 @@ class AccSystem:
         data.append(new_account)
         lib.save_data(AccData, data)
     #screen    
-    def error_screen(back_func):
-        os.system("cls")
-        print("╔══════════════════════════════════════╗")
-        print("║                ERROR                 ║")
-        print("╠══════════════════════════════════════╣")       
-        print("║             1. Return                ║")
-        print("║             0. Exit                  ║")
-        print("╚══════════════════════════════════════╝")
+    def error_screen():
+        while True:
+            os.system("cls")
+            print("╔══════════════════════════════════════╗")
+            print("║                ERROR                 ║")
+            print("╠══════════════════════════════════════╣")       
+            print("║             1. Return                ║")
+            print("║             0. Exit                  ║")
+            print("╚══════════════════════════════════════╝")
 
-        choice = input("👉 Choose: ").strip()
+            choice = input("👉 Choose: ").strip()
 
-        if choice == "1":
-            back_func()
-        elif choice == "0":
-            exit("Thank you!")
-        else:
-            error_screen(back_func)
-    def incorrect_screen(back_func):
-        os.system("cls")
-        print("╔══════════════════════════════════════╗")
-        print("║         ACCOUNT NOT CORRECT          ║")
-        print("╠══════════════════════════════════════╣")       
-        print("║             1. Return                ║")
-        print("║             0. Exit                  ║")
-        print("╚══════════════════════════════════════╝")
+            if choice == "1":
+                return
+            elif choice == "0":
+                exit("Thank you!")
+            else:
+                Accsystem.error_screen()
+    def incorrect_screen():
+        while True:
+            os.system("cls")
+            print("╔══════════════════════════════════════╗")
+            print("║         ACCOUNT NOT CORRECT          ║")
+            print("╠══════════════════════════════════════╣")       
+            print("║             1. Return                ║")
+            print("║             0. Exit                  ║")
+            print("╚══════════════════════════════════════╝")
 
-        choice = input("👉 Choose: ")
+            choice = input("👉 Choose: ")
 
-        if choice == "1":
-            back_func()
-        elif choice == "0":
-            exit("Thank you!")
-        else:
-            AccSystem.error_screen(back_func)
-    def registered_screen(back_func):
-        os.system('cls')
-        print("╔══════════════════════════════════════╗")
-        print("║     You already have an account!!    ║")
-        print("╠══════════════════════════════════════╣")
-        print("║           'r' to return              ║")
-        print("╚══════════════════════════════════════╝")
-        
-        choice = input("👉 Choose an option: ").strip()
-        if choice == "r": 
-            back_func()
-        else: 
-            AccSystem.error_screen(back_func)
-    def Success_screen(back_func):
-        os.system('cls')
-        print("╔══════════════════════════════════════╗")
-        print("║             Successful!              ║")
-        print("╠══════════════════════════════════════╣")
-        print("║           'r' to return              ║")
-        print("╚══════════════════════════════════════╝")
-        
-        choice = input("👉 Choose an option: ").strip()
-        if choice == "r": 
-            back_func()
-        else: 
-            AccSystem.error_screen(back_func)
-    def isRegistered_screen(back_func):
-        os.system('cls')
-        print("╔══════════════════════════════════════╗")
-        print("║           ID is registered!          ║")
-        print("╠══════════════════════════════════════╣")
-        print("║           'r' to return              ║")
-        print("╚══════════════════════════════════════╝")
-        
-        choice = input("👉 Choose an option: ").strip()
-        if choice == "r": 
-            back_func()
-        else: 
-            AccSystem.error_screen(back_func)
+            if choice == "1":
+                return
+            elif choice == "0":
+                exit("Thank you!")
+            else:
+                AccSystem.error_screen()
+    def registered_screen():
+        while True:
+            os.system('cls')
+            print("╔══════════════════════════════════════╗")
+            print("║     You already have an account!!    ║")
+            print("╠══════════════════════════════════════╣")
+            print("║           'r' to return              ║")
+            print("╚══════════════════════════════════════╝")
+            
+            choice = input("👉 Choose an option: ").strip()
+            if choice == "r": 
+                return 
+            else: 
+                AccSystem.error_screen()
+    def Success_screen():
+        while True:
+            os.system('cls')
+            print("╔══════════════════════════════════════╗")
+            print("║             Successful!              ║")
+            print("╠══════════════════════════════════════╣")
+            print("║           'r' to return              ║")
+            print("╚══════════════════════════════════════╝")
+            choice = input("👉 Choose an option: ").strip()
+            if choice == "r": 
+                return 
+            else: 
+                AccSystem.error_screen()
+    def isRegistered_screen():
+        while True:
+            os.system('cls')
+            print("╔══════════════════════════════════════╗")
+            print("║           ID is registered!          ║")
+            print("╠══════════════════════════════════════╣")
+            print("║           'r' to return              ║")
+            print("╚══════════════════════════════════════╝")
+            
+            choice = input("👉 Choose an option: ").strip()
+            if choice == "r": 
+                return
+            else: 
+                AccSystem.error_screen()
     @staticmethod
     def login_screen():
         while True:
@@ -234,7 +242,7 @@ class AccSystem:
             print("╠══════════════════════════════════════╣")
             print("║1. Login Admin                        ║")
             print("║2. Login Member                       ║")
-            print("║3. Sign in Member                     ║")
+            print("║3. Create a member account            ║")
             print("║0. Exit                               ║")
             print("╚══════════════════════════════════════╝")
             #================= choosing ==============
@@ -246,12 +254,12 @@ class AccSystem:
                 if Member.login_member():
                     return True
             elif choice == '3': 
-                if Member.Signin_member():
+                if Member.Signup():
                     return True
             elif choice == "0":
                 exit("Thank you!")
             else: 
-                AccSystem.error_screen(AccSystem.login_screen)
+                AccSystem.error_screen()
 #=================================================  
 
 # Lớp BookManager dùng để quản lý các hàm liên quan đến quản lí sách
