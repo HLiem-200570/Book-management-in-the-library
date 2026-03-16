@@ -3,6 +3,49 @@ import os
 import sys
 from datetime import datetime
 
+#@staticmethod : khi ko dùng biến, dữ liệu của object đó thì xài -> xài xong như 1 hàm độc lập
+
+class Library:
+    def __init__(self):
+        pass
+    # Đọc dữ liệu file #
+    def load_data(self, filename): 
+        if os.path.exists(filename): # dòng này kiểm tra xem file có tên có tồn tại ko
+            try:
+                with open (filename, 'r', encoding = 'utf - 8') as f:    #dòng này dùng để mở file với self.json: tên sách
+                                                                               #                             "r": reading -> chế độ đọc
+                                                                               # và utf - 8 là mã hóa để đọc được tiếng việt
+                    data = json.load(f)
+                    return data
+            except json.JSONDecodeError:  # Nếu file gặp lỗi thì code này sẽ chạy
+                print("⚠️ File was wrong, create a new file!")
+                return []
+        else:# trường hợp không tìm thấy file
+            print("⚠️ File doesn't exists, create a new file")
+            return []
+    # Lưu data vào file
+    def save_data(self, filename, data):
+        try:
+            with open (filename, 'w', encoding = 'utf - 8') as f:
+                json.dump(data, f, ensure_ascii = False, indent = 2) # Dòng này dùng để ghi data vào file json dump(data muốn ghi, nơi ghi, không phải kí tự ascci, thụt lề 2 unit)
+            return True
+        except Exception as e:
+            print(f"An error occurred when save file!")
+            return False
+        
+    # Book data management
+    def add_Book(self, book_data):
+
+        if self.check_book_exists(book_data['_id']):
+            print(f"Book id {book_data["_id"]} has exists!")
+            return False
+
+        if not self.check_book_exists(book_data):
+            return False
+    def find_book(self, book_id): pass
+    def create_borrow_record(self, member_id, book_id): pass
+    def return_book(self, record_id): pass
+
 #======================ACCOUNT====================
 
 def gotoxy(x, y):
@@ -50,10 +93,6 @@ class Admin(User):
                 if sys.is_account(ID, username, password):
                     return True
                 else: 
-                    print(ID)
-                    print(username)
-                    print(password)
-                    n = input()
                     sys.incorrect_scr()
             elif choice == "r":
                 return False
@@ -130,16 +169,14 @@ class AccSystem:
         self.lib = Library()
         self.accData = "Account_data.json"
     #boolean      
-    @staticmethod  
-    def ID_isRegistered(ID):
+    def ID_isRegistered(self, ID):
         lib = Library()
-        account = lib.load_data(AccData)
+        account = self.lib.load_data(self.accData)
         for check in account:
             if check["ID"] == ID:
                 return True
         return False
-    @staticmethod
-    def is_account(ID, username, password):
+    def is_account(self, ID, username, password):
         #kiểm tra tài khoản đúng hay ko
         account = self.lib.load_data(self.accData)
         for check in account: # xét từng hàng trong list
@@ -147,10 +184,8 @@ class AccSystem:
                 return True
         return False
     #handle
-    @staticmethod
-    def create_account(ID, username, password):
-        lib = Library()
-        data = lib.load_data(AccData)
+    def create_account(self, ID, username, password):
+        data = self.lib.load_data(self.accData)
         new_account = {
         "ID": ID,
         "Username": username,
@@ -158,8 +193,8 @@ class AccSystem:
         }
 
         data.append(new_account)
-        lib.save_data(AccData, data)
-    #scr    
+        self.lib.save_data(self.accData, data)
+    #screen
     @staticmethod
     def error_scr():
         while True:
@@ -283,7 +318,8 @@ class BookManager:
 
     #========== XỬ LÝ FILE ===========# 
 class Library:
-    
+    def __init__(self):
+        pass
     # Đọc dữ liệu file #
     def load_data(self, filename): 
         if os.path.exists(filename): # dòng này kiểm tra xem file có tên có tồn tại ko
