@@ -4,8 +4,7 @@ import sys
 from datetime import datetime
 
 #======================ACCOUNT====================
-AccData = "Account_data.json"
-BookData = "Book_data.json"
+
 def gotoxy(x, y):
     # hàm này để đưa con trỏ tời vị trí x, y trong terminal (làm đẹp thôi)
     sys.stdout.write(f"\033[{y};{x}H")
@@ -40,6 +39,7 @@ class Admin(User):
             print("║          'r' to return               ║")
             print("╚══════════════════════════════════════╝")
             choice = input("👉 Choose an option: ").strip()
+            sys = AccSystem()
             if choice == "t":
                 gotoxy(20, 5)
                 ID = input().strip()            
@@ -47,17 +47,17 @@ class Admin(User):
                 username = input().strip() 
                 gotoxy(20, 7)
                 password = input().strip()
-                if AccSystem.is_account(ID, username, password):
+                if sys.is_account(ID, username, password):
                     return True
                 else: 
                     print(ID)
                     print(username)
                     print(password)
                     n = input()
-                    AccSystem.incorrect_screen()
+                    sys.incorrect_scr()
             elif choice == "r":
                 return False
-            else: AccSystem.error_screen()
+            else: sys.error_scr()
 class Member(User):
     def __init__(self, ID, username, password):
         super().__init__(ID, username, password)
@@ -83,12 +83,13 @@ class Member(User):
                 username = input().strip() 
                 gotoxy(20, 7)
                 password = input().strip()
-                if AccSystem.is_account(ID, username, password):
+                sys = AccSystem()
+                if sys.is_account(ID, username, password):
                     return True
-                else: AccSystem.incorrect_screen()
+                else: sys.incorrect_scr()
             elif choice == "r":
                 return False
-            else: AccSystem.error_screen()
+            else: sys.error_scr()
     
     @staticmethod     
     def Signup():
@@ -112,19 +113,24 @@ class Member(User):
                 username = input().strip() 
                 gotoxy(20, 7)
                 password = input().strip()
-                if AccSystem.is_account(ID, username, password):
-                    AccSystem.registered_screen()
+                sys = AccSystem()
+                if sys.is_account(ID, username, password):
+                    sys.registered_scr()
                 else: 
-                    if AccSystem.ID_isRegistered(ID):  
-                        AccSystem.isRegistered_screen()
+                    if sys.ID_isRegistered(ID):  
+                        sys.isRegistered_scr()
                     else:                    
-                        AccSystem.create_account(ID, username, password)
-                        AccSystem.Success_screen()
+                        sys.create_account(ID, username, password)
+                        sys.Success_scr()
             elif choice == "r": 
                 return False
-            else: AccSystem.error_screen()
+            else: sys.error_scr()
 class AccSystem:
-    #boolean        
+    def __init__(self):
+        self.lib = Library()
+        self.accData = "Account_data.json"
+    #boolean      
+    @staticmethod  
     def ID_isRegistered(ID):
         lib = Library()
         account = lib.load_data(AccData)
@@ -132,15 +138,16 @@ class AccSystem:
             if check["ID"] == ID:
                 return True
         return False
+    @staticmethod
     def is_account(ID, username, password):
         #kiểm tra tài khoản đúng hay ko
-        lib = Library()
-        account = lib.load_data(AccData)
+        account = self.lib.load_data(self.accData)
         for check in account: # xét từng hàng trong list
             if check["ID"] == ID and check["Username"] == username and check["Password"] == password:
                 return True
         return False
     #handle
+    @staticmethod
     def create_account(ID, username, password):
         lib = Library()
         data = lib.load_data(AccData)
@@ -152,8 +159,9 @@ class AccSystem:
 
         data.append(new_account)
         lib.save_data(AccData, data)
-    #screen    
-    def error_screen():
+    #scr    
+    @staticmethod
+    def error_scr():
         while True:
             os.system("cls")
             print("╔══════════════════════════════════════╗")
@@ -170,8 +178,9 @@ class AccSystem:
             elif choice == "0":
                 exit("Thank you!")
             else:
-                Accsystem.error_screen()
-    def incorrect_screen():
+                AccSystem.error_scr()
+    @staticmethod
+    def incorrect_scr():
         while True:
             os.system("cls")
             print("╔══════════════════════════════════════╗")
@@ -188,8 +197,9 @@ class AccSystem:
             elif choice == "0":
                 exit("Thank you!")
             else:
-                AccSystem.error_screen()
-    def registered_screen():
+                AccSystem.error_scr()
+    @staticmethod
+    def registered_scr():
         while True:
             os.system('cls')
             print("╔══════════════════════════════════════╗")
@@ -202,8 +212,9 @@ class AccSystem:
             if choice == "r": 
                 return 
             else: 
-                AccSystem.error_screen()
-    def Success_screen():
+                AccSystem.error_scr()
+    @staticmethod
+    def Success_scr():
         while True:
             os.system('cls')
             print("╔══════════════════════════════════════╗")
@@ -215,8 +226,9 @@ class AccSystem:
             if choice == "r": 
                 return 
             else: 
-                AccSystem.error_screen()
-    def isRegistered_screen():
+                AccSystem.error_scr()
+    @staticmethod
+    def isRegistered_scr():
         while True:
             os.system('cls')
             print("╔══════════════════════════════════════╗")
@@ -229,13 +241,13 @@ class AccSystem:
             if choice == "r": 
                 return
             else: 
-                AccSystem.error_screen()
+                AccSystem.error_scr()
     @staticmethod
     def login_screen():
         while True:
             # nếu mình nhập sai thì phải lựa chọn lại => dùng while cho tới khi nhập đúng thì thôi
             # và nếu mình dùng xong hết tính năng thì có thể quay lại menu -> while để tái sử dụng
-            # while kết hơp chung với hàm error_screen
+            # while kết hơp chung với hàm error_scr
             os.system('cls')
             print("╔══════════════════════════════════════╗")
             print("║                Login                 ║")
@@ -249,17 +261,17 @@ class AccSystem:
             choice = input("👉 Choose an option: ").strip()
             if choice == "1":
                 if Admin.login_admin():
-                    return True
+                    return 
             elif choice == "2": 
                 if Member.login_member():
-                    return True
+                    return 
             elif choice == '3': 
                 if Member.Signup():
-                    return True
+                    return 
             elif choice == "0":
                 exit("Thank you!")
             else: 
-                AccSystem.error_screen()
+                AccSystem.error_scr()
 #=================================================  
 
 # Lớp BookManager dùng để quản lý các hàm liên quan đến quản lí sách
@@ -271,6 +283,7 @@ class BookManager:
 
     #========== XỬ LÝ FILE ===========# 
 class Library:
+    
     # Đọc dữ liệu file #
     def load_data(self, filename): 
         if os.path.exists(filename): # dòng này kiểm tra xem file có tên có tồn tại ko
@@ -309,8 +322,11 @@ class Library:
     def create_borrow_record(self, member_id, book_id): pass
     def return_book(self, record_id): pass
 
+def main(): pass
+
 if __name__ == "__main__":
-    AccSystem.login_screen() # trả về Boolean
+    # đăng nhập rồi mới được vào 
+    AccSystem.login_screen()
     #------------ hàm để clear màn hình cho đẹp------
     os.system('cls')
     #------------------------
