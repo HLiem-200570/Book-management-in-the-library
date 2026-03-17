@@ -6,7 +6,7 @@ from datetime import datetime
 
 #@staticmethod : khi ko dùng biến, dữ liệu của object đó thì xài -> xài xong như 1 hàm độc lập
 
-<<<<<<< HEAD
+# HEAD
 class User:
     def __init__(self, userID, username, password):
         self.userID = userID
@@ -111,7 +111,7 @@ class Member(User):
                     Account_system.registered_screen()
                 else: 
                     if Account_system.ID_isRegistered(ID_temp):  
-                        isRegistered_screen(Member.Signin_member)
+                        ...#### isRegistered_screen(Member.Signin_member)88888888888888888888888888888888888888888
                     else:
                        Account_system.create_account(ID_temp, username_temp, password_temp)
                        Account_system.account_success_screen(Account_system.login_screen)
@@ -143,7 +143,7 @@ class Account_system:
         "Password": password
         }
 
-        data.append(new_account)
+        ####data.append(new_account)888888888888888888888888888888888888888888888888
         lib.save_data(Library.ACCDATA, new_account)
     #screen    
     def error_screen(back_func):
@@ -162,7 +162,7 @@ class Account_system:
         elif choice == "0":
             exit("Thank you!")
         else:
-            error_screen(back_func)
+           ... #error_screen(back_func)8888888888888888888888888888888888888888888
     def incorrect_screen(back_func):
         os.system("cls")
         print("╔══════════════════════════════════════╗")
@@ -259,8 +259,8 @@ class BookManager:
 
 
     #========== XỬ LÝ FILE ===========# 
-=======
->>>>>>> ef05806a4cc490f46386338c3ae2872deac4da4f
+
+#ef05806a4cc490f46386338c3ae2872deac4da4f
 class Library:
     def __init__(self):
         pass
@@ -268,7 +268,7 @@ class Library:
     def load_data(self, filename): 
         if os.path.exists(filename): # dòng này kiểm tra xem file có tên có tồn tại ko
             try:
-<<<<<<< HEAD
+# HEAD
                 with open (self.json_file, 'r', encoding = 'utf-8') as f:   #dòng này dùng để mở file với self.json: tên sách
                                                                                # "r": reading -> chế độ đọc
                                                                                # và utf - 8 là mã hóa để đọc được tiếng việt
@@ -278,13 +278,13 @@ class Library:
                     if isinstance(data, dict) and 'books' in data:
                         return data ['books']
                     return json.load(f)
-=======
+
                 with open (filename, 'r', encoding = 'utf - 8') as f:    #dòng này dùng để mở file với self.json: tên sách
                                                                                #                             "r": reading -> chế độ đọc
                                                                                # và utf - 8 là mã hóa để đọc được tiếng việt
                     data = json.load(f)
                     return data
->>>>>>> 30a8a58cb12295289d0255543ead3d991561b1e3
+# 30a8a58cb12295289d0255543ead3d991561b1e3
             except json.JSONDecodeError:  # Nếu file gặp lỗi thì code này sẽ chạy
                 print("⚠️ File was wrong, create a new file!")
                 return []
@@ -294,18 +294,18 @@ class Library:
     # Lưu data vào file
     def save_data(self, filename, data):
         try:
-<<<<<<< HEAD
+# HEAD
             with open (self.json_file, 'w', encoding = 'utf-8') as f:
                 json.dump(self.books, f, ensure_ascii = False, indent = 2) # Dòng này dùng để ghi data vào file json dump(data muốn ghi, nơi ghi, không phải kí tự ascci, thụt lề 2 unit)
-=======
+
             with open (filename, 'w', encoding = 'utf - 8') as f:
                 json.dump(data, f, ensure_ascii = False, indent = 2) # Dòng này dùng để ghi data vào file json dump(data muốn ghi, nơi ghi, không phải kí tự ascci, thụt lề 2 unit)
->>>>>>> 30a8a58cb12295289d0255543ead3d991561b1e3
+#30a8a58cb12295289d0255543ead3d991561b1e3
             return True
         except Exception as e:
             print(f"An error occurred when save file!")
             return False
-<<<<<<< HEAD
+# HEAD
 
 
 
@@ -526,7 +526,7 @@ class Library:
 
 
 
-=======
+
         
     # Book data management
     def add_Book(self, book_data):
@@ -540,7 +540,7 @@ class Library:
     def find_book(self, book_id): pass
     def create_borrow_record(self, member_id, book_id): pass
     def return_book(self, record_id): pass
->>>>>>> ef05806a4cc490f46386338c3ae2872deac4da4f
+# ef05806a4cc490f46386338c3ae2872deac4da4f
 
 #======================ACCOUNT====================
 
@@ -862,7 +862,7 @@ if __name__ == "__main__":
     #------------ hàm để clear màn hình cho đẹp------
     os.system('cls')
     #------------------------
-<<<<<<< HEAD
+# HEAD
     manager = BookManager()
 
     while True:
@@ -905,42 +905,10 @@ if __name__ == "__main__":
             os.system('cls')
             print("Thank you!")
         else: print("ERROR")
-=======
-    print("╔══════════════════════════════════════╗")
-    print("║      📚 LIBRARY MANAGEMENT 📚        ║")
-    print("╠══════════════════════════════════════╣")
-    print("║ 1. Add new book                      ║")
-    print("║ 2. Display book list                 ║")
-    print("║ 3. Search book                       ║")
-    print("║ 4. Edit book information             ║")
-    print("║ 5. Delete book                       ║")
-    print("║--------------------------------------║")
-    print("║ 6. Borrow book                       ║")
-    print("║ 7. Return book                       ║")
-    print("║--------------------------------------║")
-    print("║ 0. Exit                              ║")
-    print("╚══════════════════════════════════════╝")
-    choice = int(input("👉 Choose an option: "))
-    #================ choice ==========
-    if choice == 1:
-        load_books
-    elif choice == 2:
-        ...
-    elif choice == 3:   
-        ...
-    elif choice == 4:
-        ...
-    elif choice == 5:
-        ...
-    elif choice == 6:
-        ...
-    elif choice == 7:
-        ...
-    elif choice == 0:
-        os.system('cls')
-        print("Thank you!")
-    else: print("ERROR")
->>>>>>> 30a8a58cb12295289d0255543ead3d991561b1e3
+
+
+
+# 30a8a58cb12295289d0255543ead3d991561b1e3
 
 
 
