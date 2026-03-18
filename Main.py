@@ -155,7 +155,8 @@ class AccSystem:
             elif choice == "2":
                 if self.login("member"): return "member" 
             elif choice == '3': 
-                self.Sign_up() 
+                self.Signup()
+                return 
             elif choice == "0":
                 exit("Thank you!")
             else: 
