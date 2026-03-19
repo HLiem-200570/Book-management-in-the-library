@@ -144,7 +144,36 @@ class Library:#class này để quản lí tất cả các object tụi mình đ
         
 class BookManager:# class BookManager dùng để quản lý các hàm liên quan đến quản lí sách
     def __init__(self, json_file = "Book_data.json"):
-        self.book_data = json_file          #Hàm dùng lưu tên Book_data.json vào self.json_file để lần sau ko cần nhập tên sách
+        self.json_file = json_file          #Hàm dùng lưu tên Book_data.json vào self.json_file để lần sau ko cần nhập tên sách
+        self.books = self.load_books()    #Hàm dùng để load sách từ file json
+
+
+    #========== XỬ LÝ FILE ===========# 
+
+    # Đọc dữ liệu file #
+    def load_books(self):
+        if os.path.exists(self.json_file): # dòng này kiểm tra xem file có tên có tồn tại ko
+            try:
+                with open (self.json_file, 'r', encoding = 'utf - 8') as f:   #dòng này dùng để mở file với self.json: tên sách
+                                                                               # "r": reading -> chế độ đọc
+                                                                               # và utf - 8 là mã hóa để đọc được tiếng việt
+                    return json.load(f)
+            except json.JSONDecodeError:  # Nếu file gặp lỗi thì code này sẽ chạy
+                print("⚠️ File was wrong, create a new file!")
+                return []
+        else:# trường hợp không tìm thấy file
+            print("⚠️ File doesn't exists, create a new file")
+            return []
+
+    # Lưu data vào file
+    def save_data(self):
+        try:
+            with open (self.json_file, 'w', encoding = 'utf - 8') as f:
+                json.dump({'books': self.books}, f, ensure_ascii = False, indent = 2) # Dòng này dùng để ghi data vào file json dump(data muốn ghi, nơi ghi, không phải kí tự ascci, thụt lề 2 unit)
+            return True
+        except Exception as e:
+            print(f"An error occurred when save file!")
+            return False
         #self.books = Library.load_book()    #Hàm dùng để load sách từ file json
     #===========tools
     def add_Book(self, book_data):
@@ -154,19 +183,154 @@ class BookManager:# class BookManager dùng để quản lý các hàm liên qua
 
         if not self.check_book_exists(book_data):
             return False
-    def find_book(self, keyword: str): #trả về list
-        keyword = keyword.lower().strip()
+# Tìm sách theo ID
+    def find_book_id(self, book_id):
+        id_list = self.load_books()
+        for book in id_list:
+            if book['_id'] == book_id:
+                return book
+        return None
+
+    # Tìm sách theo tên
+    def find_book_title(self, key_word):
+        book_list = self.load_books()
         result = []
-        book = Book()
-        for item in self.books:
-            if (keyword in book.item["_id"].lower() or 
-                keyword in book.item["title"].lower() or 
-                keyword in book.item["authors"].lower() or 
-                keyword in book.item["categories"].lower() or 
-                keyword in book.item["quantity"].lower() or 
-                keyword in book.item["publishedDate"].lower()):
-                result.append(item)
+        key_word = key_word.lower()
+        for book in book_list:
+            if key_word in book['title'].lower():
+                result.append(book)
         return result
+
+    # Hàm dùng để hiển thị sách
+    def display_book(self, book):
+        print(f"\n{'='*60}")
+        print(f"ID: {book['_id']}")
+        print(f"Title: {book['title']}")
+        print(f"Page count: {book['pageCount']}")
+        print(f"Status: {book['status']}")
+        print(f"Authors: {', '.join(book['authors'])}")
+        print(f"Categories: {', '.join(book['categories'])}")
+        print(f"Amount: {book['amount']}")
+        print(f"{'='*60}")  # FIX: f-string lồng nhau sai cú pháp
+
+    # Hiển thị menu tìm kiếm sách
+    def search_book_menu(self):
+        while True:
+            print(f"\n{'='*50}")
+            print("🔍 Find book!")
+            print("="*50)
+            print("1. Find books by ID")
+            print("2. Find books by title")
+            print("0. Exit")
+            print("-"*50)
+
+            search = input("👉 Enter your choice: ")
+
+            if search == "1":
+                try:
+                    book_id = int(input("Enter book ID: "))  # FIX: đổi id -> book_id
+                    book = self.find_book_id(book_id)
+                    if book:
+                        self.display_book(book)
+                except ValueError:
+                    print("ID was wrong!")
+
+            elif search == "2":
+                key_word = input("Enter book title: ")
+                result = self.find_book_title(key_word)
+
+                if result:
+                    print(f"\nFound {len(result)} result(s)")
+                    for book in result:
+                        self.display_book(book)
+                else:
+                    print("Books not found")
+
+            elif search == "0":
+                break
+            else:
+                print("Invalid choice, please try again.")
+
+    def display_book_list(self):
+        if not self.books:
+            print("📫 Books not in library")
+            return
+
+        books_per_page = 10
+        total_books = len(self.books)
+        total_pages = (total_books + books_per_page - 1) // books_per_page
+        current_page = 1
+
+        while True:
+            # Tính vị trí
+            start = (current_page - 1) * books_per_page
+            end = min(start + books_per_page, total_books)
+
+            # ===== HIỂN THỊ TIÊU ĐỀ =====
+            print(f"\n")
+            print("╔" + "═"*78 + "╗")
+            print("║" + " "*26 + "📚 TABLE OF CONTENTS" + " "*32 + "║")
+            print("║" + " "*30 + f"(Page {current_page}/{total_pages})" + " "*37 + "║")
+            print("╠" + "═"*78 + "╣")
+
+            # ===== HIỂN THỊ TỪNG SÁCH =====  # FIX: thêm vòng lặp và khai báo biến
+            for i, book in enumerate(self.books[start:end], start=start):
+                authors_display = ', '.join(book.get('authors', []))
+                amount = book.get('amount', 0)
+                title = book.get('title', 'N/A')
+                book_id = book.get('_id', 'N/A')
+
+                print(f"║  [{book_id}] 📖 {title:<65} ║")
+                print(f"║      ✍️  {authors_display:<67} ║")
+                print(f"║      📦 Remaining: {amount} books{' '*54} ║")
+
+                if i < end - 1:  # FIX: i giờ đã được định nghĩa trong vòng lặp
+                    print("║" + " "*78 + "║")
+
+            # ===== FOOTER =====
+            print("╠" + "═"*78 + "╣")
+            footer = f" Display {start+1}-{end} in total {total_books} books"
+            print(f"║{footer}{' '*(78 - len(footer))}║")
+            print("╚" + "═"*78 + "╝")
+
+            # ===== MENU ĐIỀU HƯỚNG =====  # FIX: gộp song ngữ, thêm xử lý [V] và [P]
+            nav_options = []
+            if current_page < total_pages:
+                nav_options.append("[N] Next page")
+            if current_page > 1:
+                nav_options.append("[P] Previous page")
+            nav_options.append("[V] View details")
+            nav_options.append("[0] Exit")
+
+            print("\n" + " | ".join(nav_options))
+            choice = input("👉 Enter your choice: ").upper()
+
+            if choice == 'N' and current_page < total_pages:
+                current_page += 1
+            elif choice == 'P' and current_page > 1:  # FIX: thêm xử lý P
+                current_page -= 1
+            elif choice == 'V':                        # FIX: thêm xử lý V
+                self.view_book_detail()
+            elif choice == '0':
+                break
+            else:
+                print("Invalid choice, please try again.")
+
+    def view_book_detail(self):
+        """View book details from table of contents"""
+        try:
+            book_id = int(input("\n👉 Enter book ID to view details: "))  # FIX: gộp 2 input thành 1
+            book = self.find_book_id(book_id)
+
+            if book:
+                self.display_book(book)
+                input("\n⏸️  Press Enter to continue...")       # FIX: gộp 2 input thành 1
+            else:
+                print("❌ Book not found!")
+                input("\n⏸️  Press Enter to continue...")       # FIX: gộp 2 input thành 1
+        except ValueError:
+            print("❌ ID must be a number!")
+            input("\n⏸️  Press Enter to continue...")           # FIX: gộp 2 input thành 1
     def create_borrow_record(self, member_id, book_id): pass
     def return_book(self, record_id): pass
     def get_available(self): pass
@@ -270,18 +434,7 @@ class Book:
     def update(): pass
     def decrease(): pass # ch rõ decrease cái j, có thể là available
     def increase(): pass
-    def display_book(self): 
-        os.system('cls')
-        print("╔═══════════════════════════════════════════════╗")
-        print(f"║{self.title:^43}║")
-        print("╠═══════════════════════════════════════════════╣")
-        print(f"║  Book ID:{self.book_ID:<33}║")
-        print(f"║  Author:{self.author:<33}║")
-        print(f"║  Category:{self.category:<33}║")
-        print(f"║  Quantity:{self.quantity:<33}║")
-        print(f"║  Date:{self.date:<33}║")
-        print(f"║  Availble:{self.available:<33}║")
-        print("╚═══════════════════════════════════════════════╝")
+
 
 #======================ACCOUNT====================
 class User:
@@ -479,6 +632,28 @@ if __name__ == "__main__":
     acc = AccSystem()
     role = acc.login_screen()  # => admin/member
     '''
+    manager = BookManager()
+    while True:
+        print("╔══════════════════════════════════════╗")
+        print("║      📚 LIBRARY MANAGEMENT 📚        ║")
+        print("╠══════════════════════════════════════╣")
+        print("║ 1. Add new book                      ║")
+        print("║ 2. Display book list                 ║")
+        print("║ 3. Search book                       ║")
+        print("║ 4. Edit book information             ║")
+        print("║ 5. Delete book                       ║")
+        print("║--------------------------------------║")
+        print("║ 6. Borrow book                       ║")
+        print("║ 7. Return book                       ║")
+        print("║--------------------------------------║")
+        print("║ 0. Exit                              ║")
+        print("╚══════════════════════════════════════╝")
+        choice = int(input("👉 Choose an option: "))
+        #================ choice ==========
+        if choice == 1:
+            ...
+        elif choice == 2:
+            manager.display_book_list()
     lib = Library()
     #if role =="admin":
     lib.admin_menu()
