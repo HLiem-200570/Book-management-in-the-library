@@ -212,6 +212,27 @@ class BookManager:# class BookManager dùng để quản lý các hàm liên qua
             elif choice == "0": return 
             else: UI.error()
          
+    # ---------- CATEGORY ----------
+    def show_books_by_category(self):
+        categories = {}
+
+        for book in self.books:
+            categories.setdefault(book.category, []).append(book)
+
+        print("\n Books by Category:")
+        for cat, books in categories.items():
+            print(f"\n {cat}:")
+            for b in books:
+                print(f"- {b.title}")
+
+    # ---------- MOST BORROWED ----------
+    def show_most_borrowed_books(self, top_n=5):
+        sorted_books = sorted(self.books, key=lambda b: b.borrow_count, reverse=True)
+
+        print("\n Most Borrowed Books:")
+        for b in sorted_books[:top_n]:
+            print(f"{b.title} - {b.borrow_count} times")
+
     def edit_book(self, item): 
         while True:
             os.system('cls')
