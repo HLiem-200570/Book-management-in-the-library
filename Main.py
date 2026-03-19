@@ -183,7 +183,7 @@ class BookManager:# class BookManager dùng để quản lý các hàm liên qua
 
         if not self.check_book_exists(book_data):
             return False
-# Tìm sách theo ID
+    # Tìm sách theo ID
     def find_book_id(self, book_id):
         id_list = self.load_books()
         for book in id_list:
@@ -262,6 +262,7 @@ class BookManager:# class BookManager dùng để quản lý các hàm liên qua
         current_page = 1
 
         while True:
+            os.system('cls')
             # Tính vị trí
             start = (current_page - 1) * books_per_page
             end = min(start + books_per_page, total_books)
@@ -269,8 +270,8 @@ class BookManager:# class BookManager dùng để quản lý các hàm liên qua
             # ===== HIỂN THỊ TIÊU ĐỀ =====
             print(f"\n")
             print("╔" + "═"*78 + "╗")
-            print("║" + " "*26 + "📚 TABLE OF CONTENTS" + " "*32 + "║")
-            print("║" + " "*30 + f"(Page {current_page}/{total_pages})" + " "*37 + "║")
+            print("║" + " "*26 + "📚 TABLE OF CONTENTS" + f"{'':^32}" + "║")
+            print("║" + " "*30 + f"(Page {current_page:03d}/{total_pages:03d})" + " "*34 + "║")
             print("╠" + "═"*78 + "╣")
 
             # ===== HIỂN THỊ TỪNG SÁCH =====  # FIX: thêm vòng lặp và khai báo biến
@@ -280,9 +281,9 @@ class BookManager:# class BookManager dùng để quản lý các hàm liên qua
                 title = book.get('title', 'N/A')
                 book_id = book.get('_id', 'N/A')
 
-                print(f"║  [{book_id}] 📖 {title:<65} ║")
-                print(f"║      ✍️  {authors_display:<67} ║")
-                print(f"║      📦 Remaining: {amount} books{' '*54} ║")
+                print(f"║  🆔[{book_id:03d}] 📖 {title:<64} ║")
+                print(f"║        ✍️{authors_display:<68} ║")
+                print(f"║       Remaining: {amount:<58}  ║")
 
                 if i < end - 1:  # FIX: i giờ đã được định nghĩa trong vòng lặp
                     print("║" + " "*78 + "║")
