@@ -11,7 +11,7 @@ class UI:# tạo class này để mấy hàm mà độc lập riêng biệt cho 
         sys.stdout.write(f"\033[{y};{x}H")
         sys.stdout.flush()
     @staticmethod
-    def error():
+    def error(self):
         while True:
             os.system("cls")
             print("╔══════════════════════════════════════╗")
@@ -27,7 +27,7 @@ class UI:# tạo class này để mấy hàm mà độc lập riêng biệt cho 
                 return
             elif choice == "0":
                 exit("Thank you!")
-            else: error()
+            else: self.error()
     def end():
         os.system("cls")
         print("╔══════════════════════════════════════╗")
@@ -66,7 +66,7 @@ class Library:#class này để quản lí tất cả các object tụi mình đ
             return False
     def load_book(self, filename, data): 
         books = []
-        data = self.load_data(bookData)
+        data = self.load_data("Book_data.json")
         for item in data:
             book = Book(
                 book_ID = item["_id"],
@@ -417,7 +417,7 @@ class BookManager:# class BookManager dùng để quản lý các hàm liên qua
             else: 
                 UI.error()
                 continue
-            Library.save_data(book_data, ...)
+            Library.save_data("Book_data.json", ...)
             ... # in màn hình thành công lưu
         
         
