@@ -21,7 +21,7 @@
 
 # Install and run programs
 1. clone repository
-###bash
+###bash:
 git clone https://github.com/HLiem-200570/Book-management-in-the-library
 - cd Book-management-in-the-library
 - python Main.py
