@@ -456,55 +456,14 @@ if __name__ == "__main__":
     # đăng nhập rồi mới được vào 
     '''
     acc = AccSystem()
-<<<<<<< HEAD
     role = acc.login_screen()  # => admin/member
     '''
     lib = Library()
     #if role =="admin":
     lib.admin_menu()
-    #else:
+    #else:  
         #lib.member_menu()
         
-=======
-    acc.login_screen()  
-    #------------ hàm để clear màn hình cho đẹp------
-    os.system('cls')
-    #------------------------
-    print("╔══════════════════════════════════════╗")
-    print("║      📚 LIBRARY MANAGEMENT 📚        ║")
-    print("╠══════════════════════════════════════╣")
-    print("║ 1. Add new book                      ║")
-    print("║ 2. Display book list                 ║")
-    print("║ 3. Search book                       ║")
-    print("║ 4. Edit book information             ║")
-    print("║ 5. Delete book                       ║")
-    print("║--------------------------------------║")
-    print("║ 6. Borrow book                       ║")
-    print("║ 7. Return book                       ║")
-    print("║--------------------------------------║")
-    print("║ 0. Exit                              ║")
-    print("╚══════════════════════════════════════╝")
-    choice = int(input("👉 Choose an option: "))
-    #================ choice ==========
-    if choice == 1:
-        ...
-    elif choice == 2:
-        ...
-    elif choice == 3:   
-        ...
-    elif choice == 4:
-        ...
-    elif choice == 5:
-        ...
-    elif choice == 6:
-        ...
-    elif choice == 7:
-        ...
-    elif choice == 0:
-        os.system('cls')
-        print("Thank you!")
-    else: print("ERROR")
->>>>>>> ec657c08be155c1907acf71bdea17b1fbb510b1b
 
 
 
