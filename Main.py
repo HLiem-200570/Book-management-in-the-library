@@ -277,7 +277,7 @@ class BookManager:# class BookManager dùng để quản lý các hàm liên qua
             # ===== HIỂN THỊ TỪNG SÁCH =====  # FIX: thêm vòng lặp và khai báo biến
             for i, book in enumerate(self.books[start:end], start=start):
                 authors_display = ', '.join(book.get('authors', []))
-                amount = book.get('amount', 0)
+                amount = book.get('quantity', 0)
                 title = book.get('title', 'N/A')
                 book_id = book.get('_id', 'N/A')
 
