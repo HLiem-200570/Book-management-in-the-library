@@ -210,7 +210,7 @@ class BookManager:# class BookManager dùng để quản lý các hàm liên qua
         print(f"Status: {book['status']}")
         print(f"Authors: {', '.join(book['authors'])}")
         print(f"Categories: {', '.join(book['categories'])}")
-        print(f"Amount: {book['amount']}")
+        print(f"Quantity: {book['quantity']}")
         print(f"{'='*60}")  # FIX: f-string lồng nhau sai cú pháp
 
     # Hiển thị menu tìm kiếm sách
