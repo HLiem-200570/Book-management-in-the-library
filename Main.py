@@ -282,7 +282,7 @@ class BookManager:# class BookManager dùng để quản lý các hàm liên qua
                 book_id = book.get('_id', 'N/A')
 
                 print(f"║  🆔[{book_id:03d}] 📖 {title:<64} ║")
-                print(f"║        ✍️{authors_display:<68} ║")
+                print(f"║        ✍️  {authors_display:<66} ║")
                 print(f"║       Remaining: {amount:<58}  ║")
 
                 if i < end - 1:  # FIX: i giờ đã được định nghĩa trong vòng lặp
