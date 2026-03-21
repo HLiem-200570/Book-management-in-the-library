@@ -720,6 +720,8 @@ if __name__ == "__main__":
             manager.add_Book()
         elif choice == 2:
             manager.display_book_list()
+        elif choice == 3:
+            manager.search_book()
     lib = Library()
     #if role =="admin":
     lib.admin_menu()
