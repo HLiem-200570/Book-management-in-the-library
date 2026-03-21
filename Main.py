@@ -176,13 +176,78 @@ class BookManager:# class BookManager dùng để quản lý các hàm liên qua
             return False
         #self.books = Library.load_book()    #Hàm dùng để load sách từ file json
     #===========tools
-    def add_Book(self, book_data):
-        if self.check_book_exists(book_data['_id']):
-            print(f"Book id {book_data["_id"]} has exists!")
-            return False
-
-        if not self.check_book_exists(book_data):
-            return False
+    def add_Book(self):
+        # ===== NHẬP ID =====
+        while True:
+            try:
+                book_id = int(input("👉 Book ID      : ").strip())
+            except ValueError:
+                print("   ⚠️  ID must be a number!")
+                continue
+ 
+            if book_id == 0:
+                return
+ 
+            if any(b['_id'] == book_id for b in self.books):
+                print(f"   ❌ ID {book_id} already exists! Please enter a different ID.")
+                continue
+            break
+ 
+        # ===== NHẬP CÁC TRƯỜNG CÒN LẠI =====
+        title = input("👉 Title        : ").strip()
+        while not title:
+            print("   ⚠️  Title cannot be empty!")
+            title = input("👉 Title        : ").strip()
+ 
+        isbn = input("👉 ISBN         : ").strip()
+ 
+        while True:
+            try:
+                page_count = int(input("👉 Page count   : ").strip())
+                break
+            except ValueError:
+                print("   ⚠️  Page count must be a number!")
+ 
+        authors_input = input("👉 Authors (comma-separated): ").strip()
+        authors = [a.strip() for a in authors_input.split(',') if a.strip()]
+ 
+        categories_input = input("👉 Categories (comma-separated): ").strip()
+        categories = [c.strip() for c in categories_input.split(',') if c.strip()]
+ 
+        while True:
+            try:
+                quantity = int(input("👉 Quantity     : ").strip())
+                if quantity < 0:
+                    print("   ⚠️  Quantity must be >= 0!")
+                    continue
+                break
+            except ValueError:
+                print("   ⚠️  Quantity must be a number!")
+ 
+        # ===== TẠO OBJECT SÁCH MỚI =====
+        new_book = {
+            "_id": book_id,
+            "title": title,
+            "isbn": isbn,
+            "pageCount": page_count,
+            "publishedDate": {"$date": datetime.now().strftime("%Y-%m-%dT%H:%M:%S.000+0000")},
+            "status": "PUBLISH",
+            "authors": authors,
+            "categories": categories,
+            "quantity": quantity
+        }
+ 
+        # ===== LƯU VÀO FILE =====
+        self.books.append(new_book)
+        try:
+            with open(self.json_file, 'w', encoding='utf-8') as f:
+                json.dump(self.books, f, ensure_ascii=False, indent=2)
+            print(f"\n✅ Book '{title}' added successfully!")
+        except Exception:
+            print("\n❌ Failed to save to file!")
+            self.books.pop()  # rollback nếu lưu thất bại
+ 
+        input("\n⏸️  Press Enter to continue...")
     # Tìm sách theo ID
     def find_book_id(self, book_id):
         id_list = self.load_books()
@@ -652,7 +717,7 @@ if __name__ == "__main__":
         choice = int(input("👉 Choose an option: "))
         #================ choice ==========
         if choice == 1:
-            ...
+            manager.add_Book()
         elif choice == 2:
             manager.display_book_list()
     lib = Library()
