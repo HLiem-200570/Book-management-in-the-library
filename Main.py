@@ -11,23 +11,6 @@ class UI:# tạo class này để mấy hàm mà độc lập riêng biệt cho 
         sys.stdout.write(f"\033[{y};{x}H")
         sys.stdout.flush()
     @staticmethod
-    def error(self):
-        while True:
-            os.system("cls")
-            print("╔══════════════════════════════════════╗")
-            print("║                ERROR                 ║")
-            print("╠══════════════════════════════════════╣")       
-            print("║             1. Return                ║")
-            print("║             0. Exit                  ║")
-            print("╚══════════════════════════════════════╝")
-
-            choice = input("👉 Choose: ").strip()
-
-            if choice == "1":
-                return
-            elif choice == "0":
-                exit("Thank you!")
-            else: self.error()
     def end():
         os.system("cls")
         print("╔══════════════════════════════════════╗")
@@ -110,7 +93,6 @@ class Library:#class này để quản lí tất cả các object tụi mình đ
                 ...
             elif choice == 0:
                 UI.end()
-            else: UI.error()
     def member_menu(self):
         while True:
             os.system('cls')
@@ -140,7 +122,6 @@ class Library:#class này để quản lí tất cả các object tụi mình đ
                 ...
             elif choice == 0:
                 UI.end()
-            else: UI.error()
         
 class BookManager:# class BookManager dùng để quản lý các hàm liên quan đến quản lí sách
     def __init__(self, json_file = "Book_data.json"):
@@ -413,34 +394,31 @@ class BookManager:# class BookManager dùng để quản lý các hàm liên qua
         if choice == 'r':
             return
         elif choice != 't': 
-            UI.error()
         #choice == t   
-        UI.gotoxy(10, 2)
-        keyword = input().strip()
-        books = self.find_book(keyword)
-        num_result = len(books) # tổng số cuốn sách tìm đươc
-        if num_result == 0:
-            os.system('cls')
-            print("╔═══════════════════════════════════════════════╗")
-            print("║                 Nothing Found                 ║")
-            print("╠═══════════════════════════════════════════════╣")       
-            print("║                 'r' to return                 ║")
-            print("╚═══════════════════════════════════════════════╝")
-            choice = input("👉 Choose an option: ").strip()
-            if choice == 'r': return
-            else: UI.error()
-        i = 0
-        while True:
-            books[i].display_book()
-            print("╔═══════════════════════════════════════════════╗")
-            print(f"║  <{i + 1}/{num_result}>{'':^39}║")
-            print("║     'j': Back | '0': Exit  | 'l': Next        ║")      
-            print("╚═══════════════════════════════════════════════╝")
-            choice = input("👉 Choose an option: ").strip()
-            if choice == "j": i = (i + 1) % num_result # vd num = 3: i = (0 + 1)%3 = 1... khi tới i = (0+4)%3 = 1 => quay lại trang đầu tiên
-            elif choice == "l": i = (i - 1) % num_result
-            elif choice == "0": return 
-            else: UI.error()
+            UI.gotoxy(12, 2)
+            keyword = input().strip()
+            books = self.find_book(keyword)
+            num_result = len(books) # tổng số cuốn sách tìm đươc
+            if num_result == 0:
+                os.system('cls')
+                print("╔═══════════════════════════════════════════════╗")
+                print("║                 Nothing Found                 ║")
+                print("╠═══════════════════════════════════════════════╣")       
+                print("║                 'r' to return                 ║")
+                print("╚═══════════════════════════════════════════════╝")
+                choice = input("👉 Choose an option: ").strip()
+                if choice == 'r': return
+            i = 0
+            while True:
+                books[i].display_book()
+                print("╔═══════════════════════════════════════════════╗")
+                print(f"║  <{i + 1}/{num_result}>{'':^39}║")
+                print("║     'j': Back | '0': Exit  | 'l': Next        ║")      
+                print("╚═══════════════════════════════════════════════╝")
+                choice = input("👉 Choose an option: ").strip()
+                if choice == "j": i = (i + 1) % num_result # vd num = 3: i = (0 + 1)%3 = 1... khi tới i = (0+4)%3 = 1 => quay lại trang đầu tiên
+                elif choice == "l": i = (i - 1) % num_result
+                elif choice == "0": return 
          
     # ---------- CATEGORY ----------
     def show_books_by_category(self):
@@ -479,9 +457,7 @@ class BookManager:# class BookManager dùng để quản lý các hàm liên qua
             elif choice == "4": item["quantity"] = input("New quantity: ").strip()
             elif choice == "5": ...
             elif choice == "0": return
-            else: 
-                UI.error()
-                continue
+
             Library.save_data("Book_data.json", ...)
             ... # in màn hình thành công lưu
         
@@ -520,7 +496,6 @@ class User:
         print("╚══════════════════════════════════════╝")
         choice = input("👉 Choose an option: ").strip()
         if choice == "r": return
-        else: UI.error()
                   
 class Admin(User):
     def __init__(self, admin_ID, username, password): 
@@ -566,7 +541,6 @@ class AccSystem:
         while True:
             # nếu mình nhập sai thì phải lựa chọn lại => dùng while cho tới khi nhập đúng thì thôi
             # và nếu mình dùng xong hết tính năng thì có thể quay lại menu -> while để tái sử dụng
-            # while kết hơp chung với hàm error
             os.system('cls')
             print("╔══════════════════════════════════════╗")
             print("║               Welcome!               ║")
@@ -586,8 +560,7 @@ class AccSystem:
                 self.Sign_up() 
             elif choice == "0":
                 UI.end()
-            else: 
-                UI.error()
+
     def login(self, role): # boolean
         while True:
             os.system("cls")
@@ -627,12 +600,10 @@ class AccSystem:
                             return
                         elif choice == "0":
                             exit("Thank you!")
-                        else:
-                            UI.error()
+   
             elif choice == "r":
                 return False
-            else: 
-                UI.error()
+
     def Sign_up(self): # ko trả về gì
         while True:
             os.system('cls')
@@ -669,8 +640,6 @@ class AccSystem:
                             choice = input("👉 Choose an option: ").strip()
                             if choice == "r": 
                                 return 
-                            else: 
-                                UI.error()
                     else: # ==========nếu chưa đăng kí          
                         self.create_account(ID, username, password)
                         while True:
@@ -683,11 +652,8 @@ class AccSystem:
                             choice = input("👉 Choose an option: ").strip()
                             if choice == "r": 
                                 return 
-                            else: 
-                                UI.error()
             elif choice == "r": 
                 return False
-            else: UI.error()
 #=================================================  
 
 def main(): pass
