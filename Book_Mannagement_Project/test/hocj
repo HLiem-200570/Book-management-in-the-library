@@ -1,0 +1,8 @@
+dùng tuple để report
+list cho biết các dữ liệu (can thiệp thông qua vị trí)
+dict() cũng vậy nhưng thêm dữ liệu vào mỗi list[i] (can thệp thông qua key)
+vd
+lst.append(apple, 11, orange, 12) -> ["apple", "11", "orange", "12"]
+dic["apple"] = 12
+dic["orange"] = 11
+tuple như list nhưng ko sửa được

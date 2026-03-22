@@ -1,0 +1,500 @@
+book_id,title,author,category,quantity
+B0001,Database Design and Implementation Vol 5,Hoang Gia E,Big Data,13
+B0002,Database Security Vol 2,Henry F. Korth,Software Engineering,15
+B0003,Database Security Vol 4,Johannes Gehrke,Software Engineering,8
+B0004,Introduction to Database Management Vol 3,S. Sudarshan,Big Data,8
+B0005,Introduction to Data Science Vol 1,Jeffrey D. Ullman,Big Data,1
+B0006,NoSQL Databases Vol 4,Johannes Gehrke,Cloud Computing,11
+B0007,Machine Learning with Databases Vol 5,Nguyen Van A,Data Science,4
+B0008,Introduction to Database Management Vol 2,Jeffrey D. Ullman,Programming,15
+B0009,Cloud Database Systems Vol 3,Thomas Connolly,Software Engineering,15
+B0010,Data Engineering Handbook Vol 4,S. Sudarshan,Cloud Computing,8
+B0011,Database System Concepts Vol 4,Pham Minh D,Cloud Computing,12
+B0012,Data Engineering Handbook Vol 3,Carolyn Begg,Programming,15
+B0013,Database System Concepts Vol 3,Jeffrey D. Ullman,Data Science,7
+B0014,Big Data Fundamentals Vol 2,Hoang Gia E,Cloud Computing,4
+B0015,Database Design and Implementation Vol 4,Michael Stonebraker,Data Science,14
+B0016,Fundamentals of Database Systems Vol 3,Hoang Gia E,Artificial Intelligence,1
+B0017,Database Security Vol 4,Johannes Gehrke,Database,5
+B0018,Introduction to Database Management Vol 4,Pham Minh D,Programming,1
+B0019,Cloud Database Systems Vol 5,Raghu Ramakrishnan,Programming,12
+B0020,Modern Database Management Vol 5,Raghu Ramakrishnan,Cloud Computing,4
+B0021,Introduction to Data Science Vol 5,Michael Stonebraker,Database,9
+B0022,Database Security Vol 2,Johannes Gehrke,Database,13
+B0023,Database Design and Implementation Vol 1,S. Sudarshan,Big Data,13
+B0024,Database System Concepts Vol 3,Hoang Gia E,Cloud Computing,8
+B0025,Learning MySQL Vol 5,Le Hoang C,Data Science,8
+B0026,Advanced Database Systems Vol 2,Michael Stonebraker,Artificial Intelligence,9
+B0027,Cloud Database Systems Vol 5,Johannes Gehrke,Cloud Computing,11
+B0028,Cloud Database Systems Vol 2,David DeWitt,Data Science,4
+B0029,Database System Concepts Vol 4,Carolyn Begg,Data Science,2
+B0030,Practical SQL Vol 3,S. Sudarshan,Database,8
+B0031,Machine Learning with Databases Vol 3,Thomas Connolly,Software Engineering,5
+B0032,Cloud Database Systems Vol 5,Henry F. Korth,Artificial Intelligence,9
+B0033,Database Security Vol 1,Pham Minh D,Software Engineering,14
+B0034,Database Design and Implementation Vol 3,Abraham Silberschatz,Big Data,15
+B0035,Learning MySQL Vol 5,Michael Stonebraker,Database,12
+B0036,Web Database Applications Vol 1,David DeWitt,Artificial Intelligence,6
+B0037,Advanced Database Systems Vol 1,David DeWitt,Software Engineering,10
+B0038,Learning MySQL Vol 2,Nguyen Van A,Artificial Intelligence,14
+B0039,Database System Concepts Vol 1,Le Hoang C,Database,9
+B0040,Data Warehousing Concepts Vol 4,Raghu Ramakrishnan,Software Engineering,14
+B0041,Machine Learning with Databases Vol 1,S. Sudarshan,Big Data,6
+B0042,SQL for Data Analysis Vol 5,S. Sudarshan,Artificial Intelligence,11
+B0043,NoSQL Databases Vol 4,Raghu Ramakrishnan,Cloud Computing,14
+B0044,Big Data Fundamentals Vol 4,Nguyen Van A,Artificial Intelligence,9
+B0045,Distributed Databases Vol 3,Tran Thi B,Data Science,4
+B0046,Practical SQL Vol 2,David DeWitt,Artificial Intelligence,5
+B0047,Introduction to Database Management Vol 5,S. Sudarshan,Cloud Computing,11
+B0048,NoSQL Databases Vol 4,Raghu Ramakrishnan,Data Science,4
+B0049,Modern Database Management Vol 3,Jeffrey D. Ullman,Programming,4
+B0050,Advanced Database Systems Vol 3,Hoang Gia E,Data Science,11
+B0051,Advanced Database Systems Vol 2,Henry F. Korth,Software Engineering,13
+B0052,Database Design and Implementation Vol 5,David DeWitt,Software Engineering,2
+B0053,Distributed Databases Vol 5,David DeWitt,Cloud Computing,3
+B0054,NoSQL Databases Vol 4,Pham Minh D,Software Engineering,12
+B0055,Introduction to Database Management Vol 4,David DeWitt,Database,1
+B0056,Introduction to Data Science Vol 1,David DeWitt,Big Data,8
+B0057,Practical SQL Vol 5,David DeWitt,Database,15
+B0058,Database Design and Implementation Vol 5,Henry F. Korth,Software Engineering,2
+B0059,Database Design and Implementation Vol 5,David DeWitt,Cloud Computing,3
+B0060,Distributed Databases Vol 1,Le Hoang C,Programming,4
+B0061,Introduction to Database Management Vol 2,Le Hoang C,Software Engineering,1
+B0062,Database Design and Implementation Vol 1,Tran Thi B,Artificial Intelligence,4
+B0063,Learning MySQL Vol 5,Pham Minh D,Programming,15
+B0064,NoSQL Databases Vol 4,Hoang Gia E,Data Science,6
+B0065,Modern Database Management Vol 5,Henry F. Korth,Programming,4
+B0066,Data Engineering Handbook Vol 1,Michael Stonebraker,Data Science,4
+B0067,NoSQL Databases Vol 4,Michael Stonebraker,Software Engineering,6
+B0068,Database Design and Implementation Vol 5,Michael Stonebraker,Database,6
+B0069,Database Design and Implementation Vol 1,David DeWitt,Big Data,8
+B0070,Introduction to Data Science Vol 5,Nguyen Van A,Cloud Computing,4
+B0071,Distributed Databases Vol 2,Tran Thi B,Programming,15
+B0072,Learning MySQL Vol 2,Abraham Silberschatz,Data Science,5
+B0073,Practical SQL Vol 3,Thomas Connolly,Cloud Computing,7
+B0074,Big Data Fundamentals Vol 1,Jeffrey D. Ullman,Data Science,5
+B0075,Introduction to Database Management Vol 2,Raghu Ramakrishnan,Data Science,1
+B0076,Introduction to Data Science Vol 5,Thomas Connolly,Software Engineering,15
+B0077,Database System Concepts Vol 3,Abraham Silberschatz,Database,10
+B0078,Web Database Applications Vol 1,Abraham Silberschatz,Artificial Intelligence,5
+B0079,Advanced Database Systems Vol 1,Thomas Connolly,Programming,8
+B0080,Learning MySQL Vol 3,Raghu Ramakrishnan,Programming,10
+B0081,Web Database Applications Vol 2,Pham Minh D,Artificial Intelligence,14
+B0082,Data Modeling Essentials Vol 5,Raghu Ramakrishnan,Programming,2
+B0083,Introduction to Data Science Vol 1,Thomas Connolly,Software Engineering,14
+B0084,Big Data Fundamentals Vol 4,Jeffrey D. Ullman,Big Data,5
+B0085,Fundamentals of Database Systems Vol 4,David DeWitt,Software Engineering,11
+B0086,Advanced Database Systems Vol 5,Le Hoang C,Programming,2
+B0087,Fundamentals of Database Systems Vol 4,Abraham Silberschatz,Cloud Computing,15
+B0088,NoSQL Databases Vol 2,Jeffrey D. Ullman,Software Engineering,8
+B0089,Big Data Fundamentals Vol 4,Abraham Silberschatz,Artificial Intelligence,13
+B0090,Machine Learning with Databases Vol 2,David DeWitt,Programming,9
+B0091,Big Data Fundamentals Vol 4,Johannes Gehrke,Programming,5
+B0092,Modern Database Management Vol 5,Johannes Gehrke,Database,2
+B0093,Fundamentals of Database Systems Vol 2,Thomas Connolly,Database,1
+B0094,Data Warehousing Concepts Vol 4,Carolyn Begg,Big Data,6
+B0095,Learning MySQL Vol 4,Carolyn Begg,Cloud Computing,15
+B0096,Database System Concepts Vol 4,Nguyen Van A,Big Data,3
+B0097,NoSQL Databases Vol 3,Jeffrey D. Ullman,Software Engineering,14
+B0098,Data Warehousing Concepts Vol 2,Carolyn Begg,Big Data,14
+B0099,Machine Learning with Databases Vol 5,Raghu Ramakrishnan,Data Science,5
+B0100,Database System Concepts Vol 5,Nguyen Van A,Database,5
+B0101,Web Database Applications Vol 5,Tran Thi B,Big Data,6
+B0102,Fundamentals of Database Systems Vol 2,Johannes Gehrke,Programming,9
+B0103,Data Modeling Essentials Vol 4,Michael Stonebraker,Artificial Intelligence,15
+B0104,Database Design and Implementation Vol 4,David DeWitt,Programming,6
+B0105,Introduction to Database Management Vol 4,S. Sudarshan,Cloud Computing,4
+B0106,Data Engineering Handbook Vol 1,Nguyen Van A,Data Science,14
+B0107,SQL for Data Analysis Vol 5,Raghu Ramakrishnan,Cloud Computing,13
+B0108,Introduction to Database Management Vol 2,Tran Thi B,Programming,1
+B0109,Machine Learning with Databases Vol 1,S. Sudarshan,Big Data,1
+B0110,Distributed Databases Vol 3,Le Hoang C,Programming,13
+B0111,Data Warehousing Concepts Vol 2,Thomas Connolly,Big Data,8
+B0112,Distributed Databases Vol 1,S. Sudarshan,Big Data,11
+B0113,Cloud Database Systems Vol 5,Thomas Connolly,Data Science,4
+B0114,Learning MySQL Vol 5,David DeWitt,Software Engineering,10
+B0115,Big Data Fundamentals Vol 3,Abraham Silberschatz,Cloud Computing,10
+B0116,Big Data Fundamentals Vol 2,Johannes Gehrke,Cloud Computing,6
+B0117,Cloud Database Systems Vol 3,Jeffrey D. Ullman,Cloud Computing,10
+B0118,Database System Concepts Vol 3,Thomas Connolly,Big Data,1
+B0119,Introduction to Data Science Vol 4,Le Hoang C,Data Science,8
+B0120,Advanced Database Systems Vol 4,S. Sudarshan,Database,8
+B0121,Learning MySQL Vol 4,Carolyn Begg,Artificial Intelligence,8
+B0122,Data Warehousing Concepts Vol 2,Tran Thi B,Software Engineering,10
+B0123,Practical SQL Vol 4,Carolyn Begg,Cloud Computing,9
+B0124,Introduction to Data Science Vol 4,Le Hoang C,Programming,3
+B0125,Database Security Vol 3,Michael Stonebraker,Database,3
+B0126,Distributed Databases Vol 4,S. Sudarshan,Data Science,2
+B0127,Web Database Applications Vol 2,Johannes Gehrke,Data Science,15
+B0128,Advanced Database Systems Vol 4,Hoang Gia E,Artificial Intelligence,6
+B0129,Big Data Fundamentals Vol 3,Jeffrey D. Ullman,Data Science,11
+B0130,SQL for Data Analysis Vol 2,David DeWitt,Database,8
+B0131,Advanced Database Systems Vol 3,Abraham Silberschatz,Software Engineering,11
+B0132,Data Warehousing Concepts Vol 5,Jeffrey D. Ullman,Database,2
+B0133,Fundamentals of Database Systems Vol 4,Thomas Connolly,Database,12
+B0134,Data Engineering Handbook Vol 3,David DeWitt,Software Engineering,13
+B0135,Database System Concepts Vol 5,Johannes Gehrke,Software Engineering,13
+B0136,Data Warehousing Concepts Vol 1,David DeWitt,Cloud Computing,11
+B0137,Introduction to Database Management Vol 2,Michael Stonebraker,Data Science,15
+B0138,Database System Concepts Vol 1,Abraham Silberschatz,Software Engineering,1
+B0139,Big Data Fundamentals Vol 5,Thomas Connolly,Database,14
+B0140,Learning MySQL Vol 4,Raghu Ramakrishnan,Data Science,10
+B0141,SQL for Data Analysis Vol 1,Johannes Gehrke,Database,7
+B0142,Web Database Applications Vol 2,Carolyn Begg,Programming,6
+B0143,Modern Database Management Vol 3,Hoang Gia E,Artificial Intelligence,15
+B0144,Introduction to Data Science Vol 2,David DeWitt,Software Engineering,1
+B0145,Database Security Vol 2,Raghu Ramakrishnan,Database,8
+B0146,Fundamentals of Database Systems Vol 4,Henry F. Korth,Programming,1
+B0147,SQL for Data Analysis Vol 2,Thomas Connolly,Artificial Intelligence,11
+B0148,Database System Concepts Vol 2,Hoang Gia E,Database,5
+B0149,Web Database Applications Vol 3,David DeWitt,Big Data,12
+B0150,Practical SQL Vol 4,Michael Stonebraker,Cloud Computing,10
+B0151,Introduction to Data Science Vol 3,Le Hoang C,Database,3
+B0152,Database Design and Implementation Vol 4,Johannes Gehrke,Database,9
+B0153,Introduction to Data Science Vol 2,Michael Stonebraker,Data Science,3
+B0154,Cloud Database Systems Vol 1,Le Hoang C,Software Engineering,15
+B0155,Cloud Database Systems Vol 2,Jeffrey D. Ullman,Data Science,10
+B0156,Practical SQL Vol 1,S. Sudarshan,Software Engineering,8
+B0157,Modern Database Management Vol 5,Henry F. Korth,Programming,4
+B0158,Database Design and Implementation Vol 3,Pham Minh D,Software Engineering,8
+B0159,Distributed Databases Vol 2,Carolyn Begg,Data Science,4
+B0160,Data Engineering Handbook Vol 3,Henry F. Korth,Artificial Intelligence,8
+B0161,Distributed Databases Vol 3,David DeWitt,Cloud Computing,13
+B0162,Distributed Databases Vol 3,Jeffrey D. Ullman,Data Science,14
+B0163,Cloud Database Systems Vol 1,Michael Stonebraker,Data Science,1
+B0164,Data Engineering Handbook Vol 3,Thomas Connolly,Cloud Computing,11
+B0165,Big Data Fundamentals Vol 3,Carolyn Begg,Cloud Computing,3
+B0166,Advanced Database Systems Vol 3,Hoang Gia E,Data Science,14
+B0167,Data Modeling Essentials Vol 1,Johannes Gehrke,Big Data,6
+B0168,NoSQL Databases Vol 2,Abraham Silberschatz,Data Science,8
+B0169,Data Modeling Essentials Vol 2,Hoang Gia E,Data Science,14
+B0170,NoSQL Databases Vol 2,Le Hoang C,Data Science,2
+B0171,Fundamentals of Database Systems Vol 3,Pham Minh D,Data Science,7
+B0172,Machine Learning with Databases Vol 1,S. Sudarshan,Database,6
+B0173,NoSQL Databases Vol 5,Hoang Gia E,Software Engineering,13
+B0174,Advanced Database Systems Vol 4,Michael Stonebraker,Artificial Intelligence,13
+B0175,Data Engineering Handbook Vol 4,Nguyen Van A,Big Data,14
+B0176,Introduction to Database Management Vol 3,S. Sudarshan,Database,3
+B0177,Data Warehousing Concepts Vol 4,Henry F. Korth,Programming,2
+B0178,Data Engineering Handbook Vol 1,Jeffrey D. Ullman,Software Engineering,4
+B0179,Machine Learning with Databases Vol 2,Hoang Gia E,Cloud Computing,7
+B0180,Introduction to Database Management Vol 4,Raghu Ramakrishnan,Cloud Computing,6
+B0181,Practical SQL Vol 1,Abraham Silberschatz,Cloud Computing,13
+B0182,SQL for Data Analysis Vol 1,Le Hoang C,Software Engineering,12
+B0183,Machine Learning with Databases Vol 3,David DeWitt,Software Engineering,9
+B0184,Machine Learning with Databases Vol 2,S. Sudarshan,Cloud Computing,10
+B0185,Big Data Fundamentals Vol 1,Carolyn Begg,Cloud Computing,5
+B0186,Data Modeling Essentials Vol 5,Michael Stonebraker,Cloud Computing,5
+B0187,Data Modeling Essentials Vol 5,David DeWitt,Software Engineering,11
+B0188,Modern Database Management Vol 5,Thomas Connolly,Programming,11
+B0189,Cloud Database Systems Vol 2,Raghu Ramakrishnan,Cloud Computing,8
+B0190,Cloud Database Systems Vol 3,Thomas Connolly,Data Science,8
+B0191,NoSQL Databases Vol 3,Abraham Silberschatz,Cloud Computing,8
+B0192,NoSQL Databases Vol 5,S. Sudarshan,Cloud Computing,3
+B0193,Data Engineering Handbook Vol 3,Henry F. Korth,Cloud Computing,12
+B0194,Web Database Applications Vol 5,Hoang Gia E,Software Engineering,9
+B0195,Big Data Fundamentals Vol 3,Carolyn Begg,Big Data,12
+B0196,Introduction to Data Science Vol 1,Johannes Gehrke,Data Science,8
+B0197,NoSQL Databases Vol 1,Jeffrey D. Ullman,Programming,13
+B0198,Cloud Database Systems Vol 3,S. Sudarshan,Big Data,14
+B0199,Web Database Applications Vol 4,Tran Thi B,Data Science,15
+B0200,Advanced Database Systems Vol 3,Hoang Gia E,Artificial Intelligence,10
+B0201,Advanced Database Systems Vol 2,S. Sudarshan,Artificial Intelligence,14
+B0202,Fundamentals of Database Systems Vol 4,Jeffrey D. Ullman,Programming,3
+B0203,Data Modeling Essentials Vol 5,Tran Thi B,Software Engineering,14
+B0204,Introduction to Database Management Vol 5,David DeWitt,Big Data,8
+B0205,Introduction to Database Management Vol 4,David DeWitt,Database,10
+B0206,SQL for Data Analysis Vol 2,Johannes Gehrke,Database,1
+B0207,NoSQL Databases Vol 4,Pham Minh D,Big Data,8
+B0208,SQL for Data Analysis Vol 3,S. Sudarshan,Data Science,2
+B0209,SQL for Data Analysis Vol 5,Michael Stonebraker,Data Science,3
+B0210,Modern Database Management Vol 5,David DeWitt,Big Data,9
+B0211,Learning MySQL Vol 3,Michael Stonebraker,Database,14
+B0212,Cloud Database Systems Vol 2,Michael Stonebraker,Database,4
+B0213,Advanced Database Systems Vol 4,David DeWitt,Big Data,9
+B0214,SQL for Data Analysis Vol 1,Thomas Connolly,Data Science,3
+B0215,SQL for Data Analysis Vol 1,Tran Thi B,Cloud Computing,9
+B0216,Practical SQL Vol 1,Michael Stonebraker,Artificial Intelligence,2
+B0217,Database System Concepts Vol 1,Johannes Gehrke,Software Engineering,3
+B0218,Data Modeling Essentials Vol 2,David DeWitt,Cloud Computing,8
+B0219,Data Modeling Essentials Vol 4,Thomas Connolly,Database,7
+B0220,Fundamentals of Database Systems Vol 5,S. Sudarshan,Big Data,7
+B0221,Data Engineering Handbook Vol 3,David DeWitt,Big Data,14
+B0222,Machine Learning with Databases Vol 3,Abraham Silberschatz,Artificial Intelligence,15
+B0223,Practical SQL Vol 1,Tran Thi B,Programming,13
+B0224,Database System Concepts Vol 1,Johannes Gehrke,Programming,15
+B0225,Database Security Vol 4,Nguyen Van A,Cloud Computing,15
+B0226,Web Database Applications Vol 4,Abraham Silberschatz,Software Engineering,1
+B0227,Data Engineering Handbook Vol 2,Raghu Ramakrishnan,Software Engineering,13
+B0228,Fundamentals of Database Systems Vol 3,Pham Minh D,Cloud Computing,3
+B0229,Introduction to Database Management Vol 1,Henry F. Korth,Big Data,15
+B0230,Practical SQL Vol 4,Thomas Connolly,Cloud Computing,8
+B0231,Data Warehousing Concepts Vol 3,Le Hoang C,Data Science,5
+B0232,Fundamentals of Database Systems Vol 3,Carolyn Begg,Programming,1
+B0233,Distributed Databases Vol 3,Carolyn Begg,Database,3
+B0234,Database Security Vol 2,Raghu Ramakrishnan,Cloud Computing,14
+B0235,Distributed Databases Vol 5,Michael Stonebraker,Programming,15
+B0236,Data Engineering Handbook Vol 4,Jeffrey D. Ullman,Database,2
+B0237,Introduction to Data Science Vol 5,Nguyen Van A,Big Data,6
+B0238,NoSQL Databases Vol 2,S. Sudarshan,Software Engineering,10
+B0239,Advanced Database Systems Vol 3,Jeffrey D. Ullman,Big Data,4
+B0240,Data Modeling Essentials Vol 3,Hoang Gia E,Big Data,4
+B0241,Big Data Fundamentals Vol 2,Raghu Ramakrishnan,Software Engineering,6
+B0242,Data Engineering Handbook Vol 5,S. Sudarshan,Database,9
+B0243,SQL for Data Analysis Vol 5,Pham Minh D,Data Science,5
+B0244,Database Design and Implementation Vol 2,Michael Stonebraker,Data Science,12
+B0245,Database System Concepts Vol 5,Michael Stonebraker,Cloud Computing,8
+B0246,Big Data Fundamentals Vol 3,Abraham Silberschatz,Software Engineering,11
+B0247,Introduction to Database Management Vol 3,Abraham Silberschatz,Programming,4
+B0248,NoSQL Databases Vol 1,Hoang Gia E,Data Science,12
+B0249,Data Warehousing Concepts Vol 2,Jeffrey D. Ullman,Artificial Intelligence,1
+B0250,Data Modeling Essentials Vol 1,Thomas Connolly,Data Science,10
+B0251,Database Design and Implementation Vol 3,Abraham Silberschatz,Artificial Intelligence,12
+B0252,Database Design and Implementation Vol 3,Le Hoang C,Artificial Intelligence,4
+B0253,Practical SQL Vol 3,S. Sudarshan,Big Data,15
+B0254,Data Warehousing Concepts Vol 3,Abraham Silberschatz,Programming,5
+B0255,Big Data Fundamentals Vol 1,Jeffrey D. Ullman,Data Science,8
+B0256,Modern Database Management Vol 1,Tran Thi B,Cloud Computing,10
+B0257,Cloud Database Systems Vol 5,Raghu Ramakrishnan,Data Science,3
+B0258,Machine Learning with Databases Vol 4,Carolyn Begg,Big Data,3
+B0259,Data Warehousing Concepts Vol 3,Johannes Gehrke,Big Data,10
+B0260,Data Warehousing Concepts Vol 2,Jeffrey D. Ullman,Database,10
+B0261,Database Security Vol 3,Michael Stonebraker,Programming,2
+B0262,Distributed Databases Vol 5,Le Hoang C,Database,6
+B0263,Distributed Databases Vol 5,Henry F. Korth,Artificial Intelligence,2
+B0264,Advanced Database Systems Vol 2,Nguyen Van A,Software Engineering,4
+B0265,Web Database Applications Vol 1,Carolyn Begg,Software Engineering,1
+B0266,Big Data Fundamentals Vol 2,Nguyen Van A,Software Engineering,9
+B0267,Practical SQL Vol 1,Pham Minh D,Cloud Computing,3
+B0268,Data Warehousing Concepts Vol 1,Carolyn Begg,Data Science,6
+B0269,Data Modeling Essentials Vol 2,Abraham Silberschatz,Data Science,4
+B0270,Data Warehousing Concepts Vol 4,Henry F. Korth,Artificial Intelligence,11
+B0271,Machine Learning with Databases Vol 3,Thomas Connolly,Programming,2
+B0272,Modern Database Management Vol 5,David DeWitt,Database,5
+B0273,Big Data Fundamentals Vol 3,Thomas Connolly,Software Engineering,1
+B0274,Practical SQL Vol 2,Carolyn Begg,Programming,9
+B0275,Big Data Fundamentals Vol 1,Carolyn Begg,Data Science,14
+B0276,Data Engineering Handbook Vol 2,Henry F. Korth,Cloud Computing,15
+B0277,Database Design and Implementation Vol 5,S. Sudarshan,Data Science,6
+B0278,Big Data Fundamentals Vol 2,Henry F. Korth,Big Data,11
+B0279,NoSQL Databases Vol 5,Nguyen Van A,Big Data,8
+B0280,Big Data Fundamentals Vol 4,Tran Thi B,Cloud Computing,8
+B0281,Practical SQL Vol 5,Thomas Connolly,Big Data,9
+B0282,Fundamentals of Database Systems Vol 5,Raghu Ramakrishnan,Data Science,7
+B0283,Database Security Vol 4,Johannes Gehrke,Data Science,12
+B0284,Fundamentals of Database Systems Vol 1,Jeffrey D. Ullman,Software Engineering,4
+B0285,NoSQL Databases Vol 3,Tran Thi B,Artificial Intelligence,10
+B0286,Modern Database Management Vol 5,Johannes Gehrke,Database,1
+B0287,Database Security Vol 5,Le Hoang C,Data Science,14
+B0288,Data Engineering Handbook Vol 5,Thomas Connolly,Data Science,14
+B0289,Database System Concepts Vol 5,Johannes Gehrke,Artificial Intelligence,13
+B0290,Cloud Database Systems Vol 1,Carolyn Begg,Database,1
+B0291,Modern Database Management Vol 2,S. Sudarshan,Cloud Computing,10
+B0292,Machine Learning with Databases Vol 5,Thomas Connolly,Software Engineering,3
+B0293,Modern Database Management Vol 5,Michael Stonebraker,Database,13
+B0294,Cloud Database Systems Vol 5,Le Hoang C,Programming,5
+B0295,Distributed Databases Vol 1,Pham Minh D,Artificial Intelligence,13
+B0296,Database Security Vol 2,Hoang Gia E,Programming,8
+B0297,Data Modeling Essentials Vol 3,Pham Minh D,Database,15
+B0298,Introduction to Data Science Vol 2,Tran Thi B,Software Engineering,15
+B0299,Database Design and Implementation Vol 2,Le Hoang C,Data Science,15
+B0300,Introduction to Database Management Vol 3,S. Sudarshan,Programming,15
+B0301,Machine Learning with Databases Vol 5,Johannes Gehrke,Programming,10
+B0302,Fundamentals of Database Systems Vol 1,Carolyn Begg,Data Science,13
+B0303,Data Modeling Essentials Vol 1,S. Sudarshan,Cloud Computing,3
+B0304,Modern Database Management Vol 4,Nguyen Van A,Cloud Computing,8
+B0305,Database Design and Implementation Vol 3,Henry F. Korth,Artificial Intelligence,10
+B0306,Practical SQL Vol 3,Le Hoang C,Data Science,14
+B0307,Cloud Database Systems Vol 1,Johannes Gehrke,Big Data,12
+B0308,Advanced Database Systems Vol 2,Thomas Connolly,Cloud Computing,13
+B0309,Practical SQL Vol 1,Raghu Ramakrishnan,Artificial Intelligence,7
+B0310,Database System Concepts Vol 5,Tran Thi B,Artificial Intelligence,6
+B0311,Data Modeling Essentials Vol 2,Thomas Connolly,Big Data,13
+B0312,SQL for Data Analysis Vol 4,Le Hoang C,Database,14
+B0313,Machine Learning with Databases Vol 5,Thomas Connolly,Database,3
+B0314,Modern Database Management Vol 5,Jeffrey D. Ullman,Data Science,7
+B0315,Machine Learning with Databases Vol 4,Pham Minh D,Software Engineering,12
+B0316,Machine Learning with Databases Vol 3,Thomas Connolly,Data Science,2
+B0317,Practical SQL Vol 4,Abraham Silberschatz,Data Science,6
+B0318,Data Modeling Essentials Vol 1,Le Hoang C,Programming,8
+B0319,Modern Database Management Vol 5,Tran Thi B,Programming,12
+B0320,Big Data Fundamentals Vol 2,Thomas Connolly,Data Science,9
+B0321,Practical SQL Vol 1,Johannes Gehrke,Programming,12
+B0322,Database System Concepts Vol 2,Henry F. Korth,Big Data,1
+B0323,Big Data Fundamentals Vol 3,Nguyen Van A,Data Science,11
+B0324,Advanced Database Systems Vol 4,Hoang Gia E,Software Engineering,2
+B0325,Advanced Database Systems Vol 3,Raghu Ramakrishnan,Cloud Computing,5
+B0326,Data Modeling Essentials Vol 2,Hoang Gia E,Programming,8
+B0327,Data Warehousing Concepts Vol 5,Raghu Ramakrishnan,Big Data,7
+B0328,Database Security Vol 5,Le Hoang C,Artificial Intelligence,2
+B0329,Database Security Vol 3,Nguyen Van A,Database,12
+B0330,Data Engineering Handbook Vol 3,Michael Stonebraker,Data Science,10
+B0331,Practical SQL Vol 3,Carolyn Begg,Software Engineering,3
+B0332,Data Engineering Handbook Vol 5,David DeWitt,Artificial Intelligence,3
+B0333,Fundamentals of Database Systems Vol 5,Henry F. Korth,Programming,11
+B0334,Distributed Databases Vol 1,Thomas Connolly,Software Engineering,15
+B0335,Cloud Database Systems Vol 4,Abraham Silberschatz,Data Science,6
+B0336,Distributed Databases Vol 4,Hoang Gia E,Database,15
+B0337,Database Design and Implementation Vol 1,Henry F. Korth,Software Engineering,2
+B0338,Machine Learning with Databases Vol 3,Henry F. Korth,Database,12
+B0339,Introduction to Data Science Vol 2,Le Hoang C,Software Engineering,13
+B0340,Data Warehousing Concepts Vol 5,Abraham Silberschatz,Data Science,9
+B0341,Practical SQL Vol 3,David DeWitt,Big Data,13
+B0342,Introduction to Database Management Vol 3,Hoang Gia E,Artificial Intelligence,11
+B0343,NoSQL Databases Vol 4,Michael Stonebraker,Programming,6
+B0344,Database System Concepts Vol 3,S. Sudarshan,Software Engineering,1
+B0345,Machine Learning with Databases Vol 3,Henry F. Korth,Programming,9
+B0346,Practical SQL Vol 3,Raghu Ramakrishnan,Programming,6
+B0347,Data Modeling Essentials Vol 3,S. Sudarshan,Artificial Intelligence,6
+B0348,Data Warehousing Concepts Vol 3,Pham Minh D,Data Science,5
+B0349,Introduction to Database Management Vol 5,David DeWitt,Programming,4
+B0350,Cloud Database Systems Vol 3,Abraham Silberschatz,Software Engineering,8
+B0351,Modern Database Management Vol 1,Le Hoang C,Artificial Intelligence,5
+B0352,Learning MySQL Vol 3,Henry F. Korth,Software Engineering,1
+B0353,Database Design and Implementation Vol 1,S. Sudarshan,Cloud Computing,14
+B0354,SQL for Data Analysis Vol 5,Abraham Silberschatz,Database,7
+B0355,Database Design and Implementation Vol 2,David DeWitt,Software Engineering,5
+B0356,Practical SQL Vol 3,Nguyen Van A,Database,4
+B0357,Cloud Database Systems Vol 3,Nguyen Van A,Database,5
+B0358,Advanced Database Systems Vol 4,Abraham Silberschatz,Big Data,9
+B0359,Big Data Fundamentals Vol 5,David DeWitt,Cloud Computing,9
+B0360,Practical SQL Vol 3,Abraham Silberschatz,Cloud Computing,5
+B0361,Database Design and Implementation Vol 5,Thomas Connolly,Data Science,2
+B0362,Database Security Vol 2,Pham Minh D,Cloud Computing,12
+B0363,Machine Learning with Databases Vol 5,Hoang Gia E,Cloud Computing,11
+B0364,Web Database Applications Vol 5,S. Sudarshan,Programming,6
+B0365,Introduction to Data Science Vol 2,Tran Thi B,Big Data,2
+B0366,SQL for Data Analysis Vol 2,David DeWitt,Database,14
+B0367,Database Security Vol 2,David DeWitt,Big Data,3
+B0368,Data Engineering Handbook Vol 3,Henry F. Korth,Artificial Intelligence,11
+B0369,SQL for Data Analysis Vol 2,S. Sudarshan,Data Science,15
+B0370,Machine Learning with Databases Vol 1,Jeffrey D. Ullman,Data Science,12
+B0371,SQL for Data Analysis Vol 5,David DeWitt,Cloud Computing,10
+B0372,Fundamentals of Database Systems Vol 3,Carolyn Begg,Artificial Intelligence,14
+B0373,NoSQL Databases Vol 5,Johannes Gehrke,Programming,4
+B0374,Machine Learning with Databases Vol 2,Thomas Connolly,Big Data,2
+B0375,Advanced Database Systems Vol 3,Henry F. Korth,Database,7
+B0376,SQL for Data Analysis Vol 5,Johannes Gehrke,Data Science,3
+B0377,Data Modeling Essentials Vol 2,Nguyen Van A,Big Data,9
+B0378,Database System Concepts Vol 2,Nguyen Van A,Artificial Intelligence,2
+B0379,Data Warehousing Concepts Vol 3,Raghu Ramakrishnan,Database,3
+B0380,Database System Concepts Vol 1,Tran Thi B,Artificial Intelligence,2
+B0381,Data Engineering Handbook Vol 1,Johannes Gehrke,Cloud Computing,8
+B0382,Database System Concepts Vol 1,David DeWitt,Artificial Intelligence,6
+B0383,Database Design and Implementation Vol 5,Abraham Silberschatz,Big Data,4
+B0384,Data Warehousing Concepts Vol 4,S. Sudarshan,Software Engineering,5
+B0385,Data Warehousing Concepts Vol 5,Tran Thi B,Software Engineering,5
+B0386,Modern Database Management Vol 3,S. Sudarshan,Cloud Computing,10
+B0387,Web Database Applications Vol 2,Pham Minh D,Software Engineering,15
+B0388,Learning MySQL Vol 1,Henry F. Korth,Database,11
+B0389,Data Warehousing Concepts Vol 3,Henry F. Korth,Cloud Computing,9
+B0390,Introduction to Database Management Vol 3,Carolyn Begg,Data Science,13
+B0391,Fundamentals of Database Systems Vol 4,Tran Thi B,Big Data,3
+B0392,Distributed Databases Vol 1,Jeffrey D. Ullman,Programming,1
+B0393,Big Data Fundamentals Vol 4,Tran Thi B,Artificial Intelligence,7
+B0394,Database System Concepts Vol 2,Henry F. Korth,Big Data,9
+B0395,Big Data Fundamentals Vol 1,Michael Stonebraker,Software Engineering,12
+B0396,Cloud Database Systems Vol 3,Hoang Gia E,Data Science,14
+B0397,Database Security Vol 5,Le Hoang C,Database,6
+B0398,Data Warehousing Concepts Vol 5,S. Sudarshan,Data Science,2
+B0399,Distributed Databases Vol 5,Nguyen Van A,Software Engineering,4
+B0400,Cloud Database Systems Vol 3,Pham Minh D,Programming,12
+B0401,Introduction to Database Management Vol 5,David DeWitt,Big Data,2
+B0402,Cloud Database Systems Vol 5,Thomas Connolly,Data Science,9
+B0403,Web Database Applications Vol 4,Le Hoang C,Artificial Intelligence,9
+B0404,SQL for Data Analysis Vol 4,Carolyn Begg,Cloud Computing,7
+B0405,Data Engineering Handbook Vol 1,David DeWitt,Data Science,15
+B0406,Machine Learning with Databases Vol 1,S. Sudarshan,Data Science,10
+B0407,Database System Concepts Vol 3,Pham Minh D,Cloud Computing,6
+B0408,Practical SQL Vol 2,Raghu Ramakrishnan,Big Data,4
+B0409,Cloud Database Systems Vol 1,Nguyen Van A,Programming,9
+B0410,Introduction to Data Science Vol 1,Jeffrey D. Ullman,Big Data,13
+B0411,Distributed Databases Vol 2,Henry F. Korth,Data Science,11
+B0412,Web Database Applications Vol 3,David DeWitt,Database,6
+B0413,SQL for Data Analysis Vol 5,Carolyn Begg,Artificial Intelligence,9
+B0414,Database Security Vol 3,Pham Minh D,Software Engineering,15
+B0415,Learning MySQL Vol 5,David DeWitt,Cloud Computing,13
+B0416,Learning MySQL Vol 5,Thomas Connolly,Cloud Computing,10
+B0417,NoSQL Databases Vol 3,S. Sudarshan,Big Data,10
+B0418,Machine Learning with Databases Vol 4,Pham Minh D,Big Data,11
+B0419,Data Warehousing Concepts Vol 4,David DeWitt,Big Data,10
+B0420,Introduction to Database Management Vol 4,Le Hoang C,Programming,9
+B0421,Database Security Vol 5,Johannes Gehrke,Database,12
+B0422,Fundamentals of Database Systems Vol 1,Raghu Ramakrishnan,Database,12
+B0423,Introduction to Data Science Vol 4,Nguyen Van A,Cloud Computing,2
+B0424,Data Modeling Essentials Vol 5,Carolyn Begg,Cloud Computing,11
+B0425,Machine Learning with Databases Vol 1,Henry F. Korth,Data Science,9
+B0426,Learning MySQL Vol 1,David DeWitt,Big Data,15
+B0427,Data Warehousing Concepts Vol 4,Thomas Connolly,Database,7
+B0428,Data Modeling Essentials Vol 3,Jeffrey D. Ullman,Cloud Computing,15
+B0429,Learning MySQL Vol 5,David DeWitt,Programming,14
+B0430,Distributed Databases Vol 5,Raghu Ramakrishnan,Programming,5
+B0431,Introduction to Database Management Vol 4,Jeffrey D. Ullman,Programming,2
+B0432,NoSQL Databases Vol 4,S. Sudarshan,Big Data,14
+B0433,Introduction to Database Management Vol 4,Tran Thi B,Artificial Intelligence,8
+B0434,Cloud Database Systems Vol 3,Henry F. Korth,Database,6
+B0435,Machine Learning with Databases Vol 2,Hoang Gia E,Data Science,9
+B0436,Big Data Fundamentals Vol 3,Pham Minh D,Cloud Computing,11
+B0437,Cloud Database Systems Vol 3,Hoang Gia E,Artificial Intelligence,12
+B0438,Practical SQL Vol 1,Nguyen Van A,Artificial Intelligence,5
+B0439,Fundamentals of Database Systems Vol 4,Thomas Connolly,Data Science,11
+B0440,Distributed Databases Vol 2,Hoang Gia E,Big Data,2
+B0441,Database Security Vol 3,Pham Minh D,Artificial Intelligence,8
+B0442,Database Design and Implementation Vol 1,Pham Minh D,Software Engineering,2
+B0443,Big Data Fundamentals Vol 5,Pham Minh D,Data Science,11
+B0444,NoSQL Databases Vol 5,Abraham Silberschatz,Big Data,7
+B0445,Machine Learning with Databases Vol 3,Michael Stonebraker,Software Engineering,13
+B0446,NoSQL Databases Vol 2,David DeWitt,Big Data,10
+B0447,Practical SQL Vol 3,S. Sudarshan,Data Science,13
+B0448,Practical SQL Vol 1,Pham Minh D,Software Engineering,11
+B0449,Data Modeling Essentials Vol 1,Nguyen Van A,Cloud Computing,11
+B0450,Distributed Databases Vol 3,Thomas Connolly,Big Data,3
+B0451,Advanced Database Systems Vol 3,Pham Minh D,Database,9
+B0452,Database Security Vol 4,Henry F. Korth,Big Data,10
+B0453,Modern Database Management Vol 3,Johannes Gehrke,Artificial Intelligence,2
+B0454,Big Data Fundamentals Vol 1,Nguyen Van A,Programming,8
+B0455,Learning MySQL Vol 1,Nguyen Van A,Cloud Computing,4
+B0456,SQL for Data Analysis Vol 4,S. Sudarshan,Big Data,9
+B0457,Introduction to Database Management Vol 5,Pham Minh D,Software Engineering,9
+B0458,Data Engineering Handbook Vol 1,Raghu Ramakrishnan,Artificial Intelligence,2
+B0459,Web Database Applications Vol 2,Johannes Gehrke,Data Science,13
+B0460,Distributed Databases Vol 4,Le Hoang C,Big Data,4
+B0461,Cloud Database Systems Vol 3,Carolyn Begg,Programming,15
+B0462,Database System Concepts Vol 4,Jeffrey D. Ullman,Software Engineering,6
+B0463,Data Warehousing Concepts Vol 1,Carolyn Begg,Programming,14
+B0464,Data Warehousing Concepts Vol 4,Jeffrey D. Ullman,Data Science,7
+B0465,Database System Concepts Vol 5,Abraham Silberschatz,Software Engineering,13
+B0466,Data Warehousing Concepts Vol 4,Abraham Silberschatz,Artificial Intelligence,12
+B0467,Practical SQL Vol 5,Johannes Gehrke,Software Engineering,6
+B0468,Data Modeling Essentials Vol 4,Nguyen Van A,Software Engineering,11
+B0469,Data Engineering Handbook Vol 2,David DeWitt,Cloud Computing,15
+B0470,Database Security Vol 5,Abraham Silberschatz,Database,12
+B0471,Database Security Vol 1,Henry F. Korth,Software Engineering,10
+B0472,Big Data Fundamentals Vol 2,Jeffrey D. Ullman,Programming,8
+B0473,Database Security Vol 2,Pham Minh D,Database,2
+B0474,Big Data Fundamentals Vol 1,S. Sudarshan,Cloud Computing,14
+B0475,Data Modeling Essentials Vol 1,Abraham Silberschatz,Database,6
+B0476,Web Database Applications Vol 5,Abraham Silberschatz,Big Data,3
+B0477,Fundamentals of Database Systems Vol 4,Henry F. Korth,Cloud Computing,15
+B0478,Learning MySQL Vol 5,Henry F. Korth,Software Engineering,6
+B0479,NoSQL Databases Vol 1,Henry F. Korth,Big Data,2
+B0480,Data Modeling Essentials Vol 4,Jeffrey D. Ullman,Data Science,5
+B0481,Distributed Databases Vol 5,Carolyn Begg,Software Engineering,9
+B0482,Fundamentals of Database Systems Vol 5,Tran Thi B,Cloud Computing,9
+B0483,Data Warehousing Concepts Vol 4,Michael Stonebraker,Cloud Computing,8
+B0484,Fundamentals of Database Systems Vol 4,Tran Thi B,Database,15
+B0485,Modern Database Management Vol 4,Hoang Gia E,Cloud Computing,3
+B0486,Database Design and Implementation Vol 3,Nguyen Van A,Database,9
+B0487,Learning MySQL Vol 1,Hoang Gia E,Artificial Intelligence,2
+B0488,Cloud Database Systems Vol 5,David DeWitt,Database,5
+B0489,Database Design and Implementation Vol 3,David DeWitt,Cloud Computing,4
+B0490,Data Modeling Essentials Vol 5,Abraham Silberschatz,Big Data,6
+B0491,Data Warehousing Concepts Vol 2,Jeffrey D. Ullman,Software Engineering,6
+B0492,Big Data Fundamentals Vol 1,Abraham Silberschatz,Programming,4
+B0493,Practical SQL Vol 3,Jeffrey D. Ullman,Big Data,15
+B0494,Introduction to Database Management Vol 3,S. Sudarshan,Artificial Intelligence,8
+B0495,Machine Learning with Databases Vol 4,Abraham Silberschatz,Cloud Computing,2
+B0496,Introduction to Database Management Vol 4,S. Sudarshan,Big Data,10
+B0497,Web Database Applications Vol 5,Michael Stonebraker,Cloud Computing,1
+B0498,Data Engineering Handbook Vol 1,Abraham Silberschatz,Big Data,8
+B0499,Introduction to Data Science Vol 4,Abraham Silberschatz,Artificial Intelligence,7

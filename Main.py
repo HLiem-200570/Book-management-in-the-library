@@ -259,6 +259,7 @@ class BookManager:# class BookManager dùng để quản lý các hàm liên qua
         print(f"Quantity: {book['quantity']}")
         print(f"{'='*60}")  # FIX: f-string lồng nhau sai cú pháp
 
+<<<<<<< HEAD
     # Hàm dùng để mượn sách
     def borrow_book(self, book_id):
         book_list = self.books["books"]  # lấy đúng list
@@ -325,6 +326,8 @@ class BookManager:# class BookManager dùng để quản lý các hàm liên qua
                 f"{i:>2}. ID: {book['_id']} | Title: {book['title']} | Authors: {', '.join(book['authors'])} | Remaining: {book.get('quantity', 0)}")
         print("=" * 60)
 
+=======
+>>>>>>> 51dd12f0a374ae292eda8acfbb7cc39f8a8ff5c3
     # Hiển thị menu tìm kiếm sách
     def search_book_menu(self):
         while True:
@@ -536,12 +539,21 @@ class Book:
         self.category = category
         self.quantity = quantity
         self.date = date
+<<<<<<< HEAD
     #def get_available(): ...
         #avail = self.quantity - 
     #def is_available(): pass
     #def update(): pass
     #def decrease(): pass # ch rõ decrease cái j, có thể là available
     #def increase(): pass
+=======
+    def get_available(): ...
+        #avail = self.quantity - 
+    def is_available(): pass
+    def update(): pass
+    def decrease(): pass # ch rõ decrease cái j, có thể là available
+    def increase(): pass
+>>>>>>> 51dd12f0a374ae292eda8acfbb7cc39f8a8ff5c3
 
 
 #======================ACCOUNT====================
@@ -752,10 +764,15 @@ if __name__ == "__main__":
             manager.add_Book()
         elif choice == 2:
             manager.display_book_list()
+<<<<<<< HEAD
         elif choice == 6:
             manager.borrow_book_interactive()
         elif choice == 7:
             manager.return_book_interactive()
+=======
+        elif choice == 3:
+            manager.search_book()
+>>>>>>> 51dd12f0a374ae292eda8acfbb7cc39f8a8ff5c3
     lib = Library()
     #if role =="admin":
     lib.admin_menu()
