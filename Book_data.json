@@ -20,7 +20,7 @@
       "Open Source",
       "Mobile"
     ],
-    "quantity": 25
+    "quantity": 15
   },
   {
     "_id": 2,
@@ -230,7 +230,7 @@
   },
   {
     "_id": 13,
-    "title": "Hello! Flex 4",
+    "title": "Hello Flex 4!",
     "isbn": "1933988762",
     "pageCount": 258,
     "publishedDate": {
@@ -246,7 +246,9 @@
     "categories": [
       "Internet"
     ],
-    "quantity": 25
+    "quantity": 25,
+    "is_borrowed": false,
+    "borrow_count": 1
   },
   {
     "_id": 14,

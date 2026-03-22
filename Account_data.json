@@ -1,42 +1,61 @@
 [
   {
-    "ID": "Admin",
-    "Username": "Admin",
-    "Password": "140506"
+    "ID": "ADMIN001",
+    "Username": "admin",
+    "Password": "admin123",
+    "role": "admin",
+    "total_borrows": 0,
+    "currently_borrowing": 0,
+    "borrow_history": []
   },
   {
     "ID": "SE200049",
     "Username": "Tuan",
-    "Password": "140506"
+    "Password": "140506",
+    "role": "member",
+    "total_borrows": 4,
+    "currently_borrowing": 1,
+    "borrow_history": [
+      {
+        "book_id": 1,
+        "title": "Clean Code",
+        "borrow_date": "2026-01-10",
+        "return_date": "2026-01-20"
+      },
+      {
+        "book_id": 2,
+        "title": "The Pragmatic Programmer",
+        "borrow_date": "2026-02-05",
+        "return_date": "2026-02-15"
+      },
+      {
+        "book_id": 3,
+        "title": "Design Patterns",
+        "borrow_date": "2026-03-01",
+        "return_date": null
+      },
+      {
+        "book_id": 13,
+        "title": "Hello Flex 4!",
+        "borrow_date": "2026-03-22",
+        "return_date": "2026-03-22"
+      }
+    ]
   },
   {
-    "ID": "SE00001",
-    "Username": "Admin",
-    "Password": "55555"
-  },
-  {
-    "ID": "SE20000",
-    "Username": "Tuan",
-    "Password": "8386"
-  },
-  {
-    "ID": "SE200067",
-    "Username": "5555",
-    "Password": "14022"
-  },
-  {
-    "ID": "SE200001",
-    "Username": "Tuan",
-    "Password": "Tun"
-  },
-  {
-    "ID": "Amin",
-    "Username": "ds",
-    "Password": "fs"
-  },
-  {
-    "ID": "SE140506",
-    "Username": "Tuan",
-    "Password": "140506"
+    "ID": "SV002",
+    "Username": "tran_thi_b",
+    "Password": "password456",
+    "role": "member",
+    "total_borrows": 1,
+    "currently_borrowing": 0,
+    "borrow_history": [
+      {
+        "book_id": 1,
+        "title": "Clean Code",
+        "borrow_date": "2026-02-01",
+        "return_date": "2026-02-10"
+      }
+    ]
   }
 ]
