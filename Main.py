@@ -259,7 +259,6 @@ class BookManager:# class BookManager dùng để quản lý các hàm liên qua
         print(f"Quantity: {book['quantity']}")
         print(f"{'='*60}")  # FIX: f-string lồng nhau sai cú pháp
 
-<<<<<<< HEAD
     # Hàm dùng để mượn sách
     def borrow_book(self, book_id):
         book_list = self.books["books"]  # lấy đúng list
@@ -326,8 +325,6 @@ class BookManager:# class BookManager dùng để quản lý các hàm liên qua
                 f"{i:>2}. ID: {book['_id']} | Title: {book['title']} | Authors: {', '.join(book['authors'])} | Remaining: {book.get('quantity', 0)}")
         print("=" * 60)
 
-=======
->>>>>>> 51dd12f0a374ae292eda8acfbb7cc39f8a8ff5c3
     # Hiển thị menu tìm kiếm sách
     def search_book_menu(self):
         while True:
